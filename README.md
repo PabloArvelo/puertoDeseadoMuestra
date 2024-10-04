@@ -20,13 +20,13 @@ Actualmente implementa:
                                - entregar nuevas prendas del uniforme al asociado
                                - devolucion del uniforme que tenía el asociado
 
-   - control de fecha de habilitación de asociado
-   - en la vista de asociado, de manera visual muestra el estado de la habilitación junto con la fecha que expira
-   - avisos automáticos vía mail con 45, 20, 7 días de anticipación al vencimiento y el día que expiró informando que está vencida.
+ - control de fecha de habilitación de asociado
+ - en la vista de asociado, de manera visual muestra el estado de la habilitación junto con la fecha que expira
+ - avisos automáticos vía mail con 45, 20, 7 días de anticipación al vencimiento y el día que expiró informando que está vencida.
   
 
-   próximanente se implementará la liquidación del anticipo de retorno
-   al ser una coperativa, no cobran un sueldo, sino mensualmente un anticipo del retorno anual
+próximanente se implementará la liquidación del anticipo de retorno
+al ser una coperativa, no cobran un sueldo, sino mensualmente un anticipo del retorno anual
 
    Tecnologías usadas
    Java
