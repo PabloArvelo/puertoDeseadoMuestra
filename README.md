@@ -34,5 +34,7 @@ al ser una coperativa, no cobran un sueldo, sino mensualmente un anticipo del re
     - Spring Boot
     - Mysql
 - IDE IntelliJ Idea
+
+![Texto alternativo de la imagen]([https://ruta-de-la-imagen.com/imagen.jpg](https://drive.google.com/file/d/1bgMHINAaaDFko2OpK669iJgaqgp_tbp4/view?usp=drive_link))
    
         
