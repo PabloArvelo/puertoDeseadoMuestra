@@ -27,5 +27,15 @@ Actualmente implementa:
 
    próximanente se implementará la liquidación del anticipo de retorno
    al ser una coperativa, no cobran un sueldo, sino mensualmente un anticipo del retorno anual
+
+   Tecnologías usadas
+   Java
+   html
+   css
+   javascript
+   Spring Boot
+   Mysql
+
+   IDE IntelliJ Idea
    
         
