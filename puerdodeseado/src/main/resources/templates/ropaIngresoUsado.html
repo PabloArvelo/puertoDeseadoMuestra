@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ingreso Uniformes-Usados</title>
+   <link rel="stylesheet" href="/css/ropaIngresoCompra.css">
+   <link rel="stylesheet" href="/css/botones.css">
+</head>
+
+<body>
+   <div id="contenedor">
+
+      <div id="usadoRopaDiv">
+         <h1 id="titulo">ingreso de uniformes USADOS</h1>
+         <div id="itemSeleccion">
+            <select name="" id="prendaSelect">
+               <option value="" selected disabled>Seleccione una prenda</option>
+            </select>
+            <select name="" id="talleSelect">
+               <option value="" selected disabled>Seleccione un talle</option>
+            </select>
+            <input type="text" id="cantidadInput">
+            <button type="button" id="agregarItem">agregar</button>
+         </div>
+      </div>
+
+      <div id="divTablaEnviar">
+         <h2>Lista de compra</h2> <!-- tengo que esconde y luego mostrar junto con la tabla -->
+         <table id="tablaEnviarCompra">
+            <thead>
+               <tr>
+                  <th id="thPrenda">PRENDA</th>
+                  <th id="thTalle">TALLE</th>
+                  <th id="thCantidad">CANTIDAD</th>
+                  <th id="thTacho"></th>
+               </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+         </table>
+
+         <div>
+            <button id="enviarLista">enviar</button>
+         </div>
+
+      </div>
+
+      <div id="salir">
+         <button id="volverVistaAnterior" type="button">salir</button>
+      </div>
+
+
+
+   </div>
+
+   <script src="/script/ropaIngreUsado.js"></script>
+
+</body>
+
+</html>

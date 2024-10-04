@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="/css/ropaStock.css">
+   <link rel="stylesheet" href="/css/botones.css">
+
+   <title>Stock Uniformes</title>
+</head>
+
+<body>
+
+   <h1 id="titulo">stock general UNIFORMES</h1>
+
+   <table>
+      <thead>
+         <tr>
+            <th id="thPrenda">PRENDA</th>
+            <th id="thTalle">TALLE</th>
+            <th id="thEstado">ESTADO</th>
+            <th id="thStock">STOCK</th>
+         </tr>
+      </thead>
+
+      <!-- recibo desde el backend la variable stockPrendas con la ropa que hay en stock en depósito 
+       y la muestra en la tabla -->
+      <div th:if="${stockPrendas}!=null">
+         <tbody th:each="prenda : ${stockPrendas}">
+            <tr>
+               <td th:text="${prenda.prenda}"></td>
+               <td th:text="${prenda.talle}"></td>
+               <td th:text="${prenda.estado}"></td>
+               <td th:text="${prenda.stock}"></td>
+               <!-- <td th:text="${prenda.talle}"></td> -->
+            </tr>
+         </tbody>
+      </div>
+   </table>
+
+   <form action="/stock/pdf" method="get">
+      <button class="botonLargo" type="submit">generar PDF</button>
+   </form>
+
+   <form action="/" method="get">
+      <button type="submit">salir</button>
+   </form>
+
+</body>
+
+</html>

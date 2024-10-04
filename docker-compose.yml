@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  puerdodeseado:
+    build: puerdodeseado    
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: jdbc:mysql://puerto_d:3306/puerto_deseado2?createDatabaseIfNotExist=true&allowPublicKeyRetrieval=true&useSSL=false&useTimezone=true&serverTimezone=GMT-3&characterEncoding=UTF-8
+      DB_USER_NAME: root
+      DB_PASSWORD: asd-7890
+    restart: always
+    depends_on:
+      puerto_d:
+        condition: service_healthy
+  puerto_d:
+    image: mysql:8.0.33 
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: asd-7890
+      MYSQL_PASSWORD: asd-7890
+      MYSQL_DATABASE: puerto_deseado2
+    restart: always
+    healthcheck:
+      test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+      timeout: 10s
+      retries: 10

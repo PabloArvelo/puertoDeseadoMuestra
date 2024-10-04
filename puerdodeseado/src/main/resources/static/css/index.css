@@ -1,0 +1,208 @@
+#pdSoft{    
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 98%;
+}
+#spanPdSoft{
+    font-size: small;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #adbcc7;   
+    margin-top: 10px;
+}
+#logoContenedor{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+
+    height: 100px;
+    width: 150px;
+    overflow: visible;    
+}
+#imgLogo{    
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  
+    filter: url(#drop-shadow);        
+}
+#contenedorMain{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.botones{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 16px 4px rgba(0,0,0,0.36);
+    -webkit-box-shadow: 0px 2px 16px 4px rgba(0,0,0,0.36);
+    -moz-box-shadow: 0px 2px 16px 4px rgba(0,0,0,0.36);
+    height: 100px;
+    width: 150px;
+    margin: 10px;
+}
+
+#acciones{
+    display: flex;
+    flex-direction: row;
+}
+
+#buscarPorCuil{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+h1{
+    color:#636B76;
+}
+
+
+a{
+    color: rgb(255, 255, 255);
+}
+
+
+/* foto del ojito */
+.imgVer {
+    width: 25px;       
+}
+
+/* ------------------ TABLA BUSCAR POR APELLIDO ------------------ */
+#divTablaResultadoPorApellido{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 20px 0px 100px 0px;
+}
+
+
+#tablaResultadoPorApellido{ 
+    width: 100%;
+    table-layout: fixed; /* Asegura que las celdas tengan un ancho fijo */
+    /* margin-bottom: 30px; */
+    
+}
+
+.datos{
+    width: 30%; /* Ancho fijo para las celdas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    text-align: left; /* Alineación del texto en el centro */   
+    border-top: 1px solid black;
+    
+}
+.thDatos{    
+    width: 30%; /* Ancho fijo para las celdas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    text-align: left; /* Alineación del texto en el centro */
+    
+    color: antiquewhite;
+    background-color: #636B76;
+}
+.thDatosApellido, .tdDatosApellido{
+    padding-left: 10px;
+}
+
+.ojito{    
+    width: 10%; /* Ancho fijo para las celdas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    text-align: center; /* Alineación del texto en el centro */    
+    border-top: 1px solid black;  
+}
+
+
+
+.imgVerHeadYDatos{
+    width: 50px; /* Ancho fijo para las celdas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    text-align: center; /* Alineación del texto en el centro */
+
+    background-color: #636B76;
+    color: antiquewhite;
+    
+}
+
+
+#busqueda{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+    width: 80%;
+
+    
+
+}
+#buscarPorApellido{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.pError{
+    height: 25px;
+    margin-bottom: 5px;
+} 
+
+.divBusqueda{
+    
+    width: 300px;
+}
+
+
+#modalIngresoUniformes{
+    background-color: #828C9A;            
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+#modalIngUnifContenedorMain{
+    background-color: #828C9A;     
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;   
+    
+}
+#modalIngUnifContenedorBtns{
+    background-color: #828C9A;    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    margin-bottom: 1rem;    
+}
+
+#modalIngUnifContenedorBtnCerrar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;    
+    width: 100%;    
+}
+
+
+
+
+
+
+

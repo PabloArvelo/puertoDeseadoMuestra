@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Movimiento Uniforme 2</title>
+
+   <link rel="stylesheet" href="/css/ropamovimiento.css">   
+   <link rel="stylesheet" href="/css/botones.css">
+
+</head>
+
+<body>
+
+   <div id="contenedor">
+
+      <h1 id="titulo">ENTREGA de uniformes</h1>
+
+      <h2 id="titulo2">ropa asignada a </span> </h1>
+         <span id="nombreAsociado"></span>
+         
+         
+         
+
+      <table id="tablaUnifEntreg">
+         <thead>
+            <tr>
+               <th id="thPrenda">PRENDA</th>               
+               <th id="thTalle">TALLE</th>
+               <th id="thCantidad">CANTIDAD</th>
+            </tr>
+         </thead>
+
+            <!-- recibo desde el backend la variable prendas con la ropa que tiene el asociado y la muestra en la tabla
+            si no tiene, muestra el mensaje del div mas abajo -->
+         <div th:if="${prendas}!=null">
+            <tbody th:each="prenda : ${prendas}">
+               <tr>
+                  <td th:text="${prenda.prenda}"></td>                  
+                  <td class="detalle" th:text="${prenda.talle}"></td>
+                  <td class="detalle" th:text="${prenda.cantidad}"></td>
+               </tr>
+            </tbody>
+         </div>
+      </table>
+
+      <div th:if="${#vars.prendas == null}">
+         <p th:text="${sinAsignar}"></p>
+      </div>
+
+      
+
+      <div id="asignarItemsDiv">
+         <input hidden th:value="${idAsoc}" name="idAsoc" id="hiddenID">
+         <input hidden th:value="${cuil}" name="cuil" id="hiddenCUIL">
+         
+         <h2>asignar nuevas prendas</h2> <!-- tengo que esconde y luego mostrar junto con la tabla -->
+         <div id="itemSeleccion">
+
+
+            
+
+            <div class="contenedorSeleccion">
+               <div class="seccion">
+                  <p>PRENDA</p>
+                  <select name="" id="prendaSelect">
+                     <option value="" selected disabled>Seleccione una prenda</option>
+                  </select>
+               </div>
+               
+   
+               <div class="seccion">
+                  <p>ESTADO</p>
+                  <select name="" id="estadoSelect">
+                     <option value="" selected disabled>Seleccione un estado</option>
+                  </select>
+               </div>
+   
+   
+               <div class="seccion">
+                  <p>TALLE</p>
+                  <select name="" id="talleSelect">
+                     <option value="" selected disabled>Seleccione un talle</option>
+                  </select>
+               </div>            
+               
+   
+               <div class="seccion">
+                  <p>STOCK</p>
+                  <input type="text" id="stockInput" disabled>               
+               </div>
+   
+               <div class="seccion">
+                  <p>CANTIDAD</p>
+                  <input type="text" id="cantidadInput">
+               </div>
+
+            </div>
+
+
+            <div>
+               <button type="button" id="agregarItem">agregar</button>
+            </div>
+            
+            
+
+         </div>
+
+         <div id="divTablaEnviar">
+            <h2>Lista de prendas a asignar</h2> <!-- tengo que esconde y luego mostrar junto con la tabla -->
+            <table id="tablaEnviar">
+               <thead>
+                  <tr>
+                     <th id="tablaEnviarThPrenda">PRENDA</th>
+                     <th id="tablaEnviarThTalle">TALLE</th>
+                     <th id="tablaEnviarThEstado">ESTADO</th>
+                     <th id="tablaEnviarThCantidad">CANTIDAD</th>
+                     <th id="tablaEnviarTheliminar"></th>
+                  </tr>
+               </thead> 
+   
+               <tbody>
+               </tbody>                                
+            </table>
+   
+            <div>
+               <button id="enviarLista">enviar</button>
+            </div>  
+                        
+         </div>
+      </div>
+
+      <!--      con este boton se habilita el Div con su propio boton de   "agregar item" -->
+      <button class="botonLargo" type="button" id="mostrarForm">agregar item</button>
+
+      
+
+      <div>
+         <button id="volverVistaAnterior">salir</button>
+      </div>      
+      
+
+   </div>
+
+   
+   
+   
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+   <script src="/script/ropaMovimiento_2.js"></script>
+</body>
+
+</html>

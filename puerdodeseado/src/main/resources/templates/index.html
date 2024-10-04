@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+   <meta charset="UTF-8">
+   <title>Puerto Deseado - LOGIN</title>
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+   <link rel="stylesheet" href="/css/index.css">
+   <link rel="stylesheet" href="/css/ropaYTalleEditarMODAL.css">
+   <link rel="stylesheet" href="/css/botones.css">
+
+</head>
+
+<body>
+
+   <div id="pdSoft">
+      <span id="spanPdSoft">pdSoft Ver 1.0.2</span>
+   </div>
+
+
+
+
+   <div id="contenedorMain">
+
+      <div id="logoContenedor">
+         <svg width="0" height="0">
+            <defs>
+               <filter id="drop-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feDropShadow dx="10" dy="10" stdDeviation="5" flood-color="rgba(0,0,0,0.3)" />
+               </filter>
+            </defs>
+         </svg>
+         <img id="imgLogo" src="/img/logo.png" alt="logo">
+      </div>
+
+      <div id="bienvenidos">
+         <h1>Bienvenidos</h1>
+      </div>
+
+
+
+      <div id="acciones">
+
+         <div class="btnAcciones">
+            <a href="/alta_asoc" class="btn btn-secondary my-2 botonVolver botones">alta asociado</a>
+         </div>
+
+         <div class="btnAcciones" id="ingresoUniformes">
+            <a href="#" class="btn btn-secondary my-2 botonVolver botones" id="btnModalUniformes">ingresar uniformes</a>
+         </div>
+
+         <div class="btnAcciones" id="editarUniformes">
+            <a href="#" class="btn btn-secondary my-2 botonVolver botones" id="btnModal">nueva
+               prenda y talle</a>
+         </div>
+   
+         <div class="btnStock" id="stockUniformes">
+            <a href="/stock/uniformes" class="btn btn-secondary my-2 botonVolver botones" id="btnModal">stock
+               uniformes</a>
+         </div>
+   
+         <div class="btnAcciones" id="anticipos">
+            <a href="/anticipos/enConstruccion" class="btn btn-secondary my-2 botonVolver botones">anticipos de
+               retorno</a>
+         </div>
+   
+         <div class="btnAcciones" id="anticipos">
+            <a href="/importarCSV" class="btn btn-secondary my-2 botonVolver botones">importarCSV</a>
+         </div>
+         
+      </div>
+
+   </div>
+
+
+
+
+
+
+   <!-- ------------ CAMPOS DE BUSQUEDA-------------     -->
+
+   <div id="busqueda">
+
+      <div id="buscarPorCuil" class="divBusqueda">
+         <h4>buscar por CUIL</h4>
+         <form th:action="@{/buscar/unoSolo}" method="GET">
+
+            <label for="cuil">INGRESE CUIL</label>
+
+            <input type="text" id="cuil" name="nCuil">
+            <p class="pError" id="pNoExisteCuil" th:text="${noExisteCuil}"></p>
+            <button type="submit">Buscar</button>
+         </form>
+      </div>
+
+      <div id="buscarPorApellido" class="divBusqueda">
+         <h4>buscar por APELLIDO</h4>
+         <form id="buscarPorApellidoForm">
+            <label for="cuil">INGRESE APELLIDO</label>
+
+            <input type="text" id="apellido" name="nCuil">
+            <p class="pError" id="pNoExisteApellido"></p>
+            <button type="submit">Buscar</button>
+         </form>
+      </div>
+
+   </div>
+
+
+
+
+
+
+
+
+
+
+   
+
+
+   <!-- se utiliza para que el modal esté difuminado atras -->
+   <div class="overlay" id="overlay"></div>
+
+
+
+   <dialog id="modal">
+
+      <div id="modalContenedorMain">
+
+         <div id="modalContenedor">
+
+            <!-- formulario de alta de item uniforme -->
+            <div class="divFormModal" id="altaRopa">
+               <form id="formRopa" th:action="@{/ropa/altaPrenda}" method="post" th:object="${ropaDTO}">
+
+                  <label class="labelModal" for="prendaModal">ingresar item</label>
+                  <input id="prendaModal" name="prenda" type="text" placeholder="nueva prenda" th:field="*{prenda}">
+                  <span class="error" th:if="${#fields.hasErrors('prenda')}" th:errors="*{prenda}"
+                     data-error="true"></span>
+                  <span class="error" th:if="${prendaDuplicada}" th:text="${prendaDuplicada}" data-error="true"></span>
+
+                  <div id="secundario-boton">
+                     <button id="btnGuardarPrenda" type="submit">Guardar</button>
+                  </div>
+
+               </form>
+            </div>
+
+            <div class="divFormModal" id="altaTalle">
+
+               <!-- formulario de alta de nuevo talle -->
+               <form th:action="@{/ropa/altaTalle}" method="post" th:object="${ropaTalleDTO}">
+
+                  <label class="labelModal" for="talleModal">ingresar talle</label>
+                  <input id="talleModal" name="talle" type="text" placeholder="nuevo talle">
+                  <span class="error" th:if="${#fields.hasErrors('talle')}" th:errors="*{talle}"
+                     data-error="true"></span>
+                  <span class="error" th:if="${talleDuplicado}" th:text="${talleDuplicado}" data-error="true"></span>
+
+                  <div id="secundario-boton">
+                     <button id="btnGuardarTalle" type="submit">Guardar</button>
+                  </div>
+
+               </form>
+            </div>
+
+         </div>
+         <button id="cerrarModal">cerrar</button>
+      </div>
+   </dialog>
+
+
+
+
+   <dialog id="modalIngresoUniformes">
+
+      <div id="modalIngUnifContenedorMain">
+
+         <div id="modalIngUnifContenedorBtns">
+            <div class="btnAcciones" id="compraUniformes">
+               <a href="/ropaMovimiento/ropaIngresoCompra" class="btn btn-secondary my-2 botonVolver botones">compra</a>
+            </div>
+      
+            <div class="btnAcciones" id="usadoUniformes">
+               <a href="/ropaMovimiento/ropaIngresoUsado" class="btn btn-secondary my-2 botonVolver botones">usado</a>
+            </div>
+         </div>
+
+         <div id="modalIngUnifContenedorBtnCerrar">
+            <button id="cerrarModalUniformes">cerrar</button>
+         </div>
+
+
+      </div>
+
+      
+
+   </dialog>
+
+
+
+   <!-- -------------------- TABLA RESULTADO BUSQUEDA POR APELLIDO--------------------  -->
+
+   <div id="divTablaResultadoPorApellido">
+      <table id="tablaResultadoPorApellido">
+         <thead>
+            <tr>
+               <th class="thDatos thDatosApellido">APELLIDO</th>
+               <th class="thDatos">NOMBRE</th>
+               <th class="thDatos">CUIL</th>
+               <th class="imgVerHeadYDatos">VER</th>
+            </tr>
+         </thead>
+
+         <tbody id="resultTableBody">
+
+         </tbody>
+
+      </table>
+
+   </div>
+
+
+   <p th:text="${mensajeError}"></p>
+
+
+
+
+
+
+
+
+   <script src="/script/index.js"></script>
+</body>
+
+</html>

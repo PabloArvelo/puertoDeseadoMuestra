@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asociado</title>
+  <link rel="stylesheet" href="/css/asociado.css">
+  <link rel="stylesheet" href="/css/botones.css">
+
+</head>
+
+<body>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div id="contenedorMain">
+
+
+    <!-- capturo de manera oculta el ID -->
+    <input hidden th:value="${idAsoc}" name="idAsoc" id="idAsocFuente">
+
+
+
+    <div id="contenedorMenu">
+
+      <ul class="menu">
+
+        <li class="submenu">
+          <a href="#">uniforme</a>
+          <ul>
+            <li><a class="menuItems"
+                th:href="@{/ropaMovimiento/listarRopaPorAsociado/__${idAsoc}__/__${cuil}__}">entrega</a>
+            </li>
+            <li><a class="menuItems"
+                th:href="@{/ropaMovimiento/ropaIngresoDevolucion/__${idAsoc}__/__${cuil}__}">devolución</a>
+            </li>
+        </li>
+
+      </ul>
+      </li>
+      <a class="menuItems" th:href="@{/}">salir</a>
+
+      </ul>
+
+    </div>
+
+    <div id="contenedorDatos">
+      <div id="datosPrincipal">
+
+        <div id="foto">
+          <div id="imgContainer">
+            <img class="logo fotito" th:src="@{${rutaImagen}}">
+          </div>
+        </div>
+
+        <div id="habilitacion">
+          <div id="imgHabilContainer">
+            <img id="logoHabilitacion" th:src="@{${rutaImagenHabilitacion}}">
+          </div>
+          <div class="datos">
+            <p id="habilitacionFuente" th:text="${habilitacion}"></p>
+            <!-- <p id="habilitacionFuente" >25/05/2024</p> -->
+          </div>
+        </div>
+
+        <div id="info">
+
+          <div id="infoL">
+            <div class="datos">
+              <label for="">Nombre</label>
+              <p id="nombreFuente" th:text="${nombre}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Apellido</label>
+              <p id="apellidoFuente" th:text="${apellido}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Grupo Sanguíneo</label>
+              <p id="grupoSanguineoFuente" th:text="${grupoSanguineo}"></p>
+            </div>
+          </div>
+
+          <div id="infoR">
+            <div class="datos">
+              <label for="">Fecha de Ingreso</label>
+              <p id="fechaIngresoFuente" th:text="${fechaIngreso}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Dpto. Laboral</label>
+              <p id="dptoLaboralFuente" th:text="${depatamentoLaboral}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Edad</label>
+              <p id="edadFuente" th:text="${edad}"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div id="datosSecundario">
+
+        <div id="datosPersonales">
+          <div class="titulo">
+            <h3>PERSONALES</h3>
+          </div>
+
+          <div class="datos2">
+            <div class="datos">
+              <label for="">DNI</label>
+              <p id="dniFuente" th:text="${dni}"></p>
+            </div>
+            <div class="datos">
+              <label for="">CUIL</label>
+              <p id="cuilFuente" th:text="${cuil}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Fecha de Nac.</label>
+              <p id="fechaNacFuente" th:text="${fechaNac}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Nacionalidad</label>
+              <p id="nacionalidadFuente" th:text="${nacionalidad}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Estado Civil</label>
+              <p id="estadoCivilFuente" th:text="${estadoCivil}"></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="datosContacto">
+          <div class="titulo">
+            <h3>CONTACTO</h3>
+          </div>
+
+          <div class="datos2">
+            <div class="datos">
+              <label for="">Tel. Fijo</label>
+              <p id="telFijoFuente" th:text="${telFijo}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Tel. Móvil</label>
+              <p id="telMovilFuente" th:text="${telMovil}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Email</label>
+              <p id="emailFuente" th:text="${email}"></p>
+            </div>
+          </div>
+        </div>
+
+        <div id="datosDomicilio">
+          <div class="titulo">
+            <h3>DOMICILIO</h3>
+          </div>
+
+          <div class="datos2">
+            <div class="datos">
+              <label for="">Calle</label>
+              <p id="calleFuente" th:text="${calle}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Número</label>
+              <p id="numeroFuente" th:text="${numero}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Piso</label>
+              <p id="pisoFuente" th:text="${piso}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Departamento</label>
+              <p id="departamentoFuente" th:text="${dpto}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Barrio</label>
+              <p id="barrioFuente" th:text="${barrio}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Distrito</label>
+              <p id="distritoFuente" th:text="${distrito}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Provincia</label>
+              <p id="provinciaFuente" th:text="${provincia}"></p>
+            </div>
+            <div class="datos">
+              <label for="">Códio Postal</label>
+              <p id="codigoPostalFuente" th:text="${codigoPostal}"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contenedorBotonesUpdate">
+      <button class="btnActualizar" id="btnActualizarDatos">actualizar datos</button>
+      <button class="btnActualizar" id="btnActualizarFoto">actualizar foto</button>
+      <button class="btnActualizar" id="btnActualizarHabilitacion">actualizar habilitación</button>
+
+    </div>
+
+  </div>
+
+
+  <!-- ------------------modal actualizar datos----------------- -->
+
+  <!-- se utiliza para que el modal esté difuminado atras -->
+  <div class="overlay" id="overlay"></div>
+
+  <dialog id="datosModifDialog">
+
+    <div id="divContenedorModal">
+      <div id="modalContenedor">
+        <form id="formActualizar" th:action="@{/asociado/actualizar}" method="post" th:object="${asociadosDtoCompDTO}">
+
+          <div id="contenedorActualizarDatos">
+
+            <div class="infoActualizar" id="infoActualizarL">
+
+              <input hidden id="idAsocActualizar" name="idAsocActualizar" type="text" th:field="*{asociadoDTO.idAsoc}">
+
+
+              <input type="hidden" th:value="${rutaImagen}" th:field="*{asociadoDTO.rutaImagen}" />
+
+
+
+              <label class="labelActualizarDatos" for="apellidoActualizar">Apellido(s)</label>
+              <div class="miniSecciones">
+                <input class="input" id="apellidoActualizar" name="apellido" type="text"
+                  th:field="*{asociadoDTO.apellido}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.apellido')}"
+                    th:errors="*{asociadoDTO.apellido}" data-error="true"></span>
+
+                </div>
+              </div>
+
+              <label class="labelActualizarDatos" for="nombreActualizar">Nombre(s)</label>
+              <div class="miniSecciones">
+                <input class="input" id="nombreActualizar" name="nombre" type="text" th:field="*{asociadoDTO.nombre}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.nombre')}"
+                    th:errors="*{asociadoDTO.nombre}" data-error="true"></span>
+                </div>
+
+              </div>
+
+
+
+              <label class="labelActualizarDatos" for="dptoLaboralActualizar">Dpto. Laboral</label>
+              <div class="miniSecciones">
+                <select class="input" id="dptoLaboralActualizar" name="depatamentoLaboral"
+                  th:field="*{asociadoDTO.depatamentoLaboral}">
+                  <option value="">seleccione una opción</option>
+                  <option value="OPERACIONES">OPERACIONES</option>
+                  <option value="ADMINISTRACION">ADMINISTRACION</option>
+                </select>
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.depatamentoLaboral')}"
+                    th:errors="*{asociadoDTO.depatamentoLaboral}" data-error="true"></span>
+                </div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="fechaNacimientoActualizar">F. de Nac.</label>
+              <div class="miniSecciones">
+                <input class="InputAncho input" id="fechaNacimientoActualizar" name="fechaNacimiento" type="date"
+                  th:field="*{asociadoDTO.fechaNacimiento}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.fechaNacimiento')}"
+                    th:errors="*{asociadoDTO.fechaNacimiento}" data-error="true"></span>
+                </div>
+
+              </div>
+
+
+              <label class="labelActualizarDatos" for="nacionalidadActualizar">Nacionalidad</label>
+              <div class="miniSecciones">
+                <input class="input" id="nacionalidadActualizar" name="nacionalidad" type="text"
+                  th:field="*{asociadoDTO.nacionalidad}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.nacionalidad')}"
+                    th:errors="*{asociadoDTO.nacionalidad}" data-error="true"></span>
+                </div>
+              </div>
+
+            </div>
+
+            <div class="infoActualizar" id="infoActualizarCL">
+              <label class="labelActualizarDatos" for="dniActualizar">DNI</label>
+              <div class="miniSecciones">
+                <input class="input" id="dniActualizar" name="dni" type="number" maxlength="8"
+                  th:field="*{asociadoDTO.dni}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.dni')}" th:errors="*{asociadoDTO.dni}"
+                    data-error="true"></span>
+                </div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="cuilActualizar">CUIL</label>
+              <div class="miniSecciones">
+                <input class="input" type="number" id="cuilActualizar" name="cuil" maxlength="11"
+                  th:field="*{asociadoDTO.cuil}" readonly>
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.cuil')}" th:errors="*{asociadoDTO.cuil}"
+                    data-error="true"></span>
+                  <span class="error" th:if="${error != null}" th:text="${error}" data-error="true"></span>
+                </div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="estadoCivilActualizar">Estado Civil</label>
+              <div class="miniSecciones">
+                <select class="input" id="estadoCivilActualizar" name="estadoCivil"
+                  th:field="*{asociadoDTO.estadoCivil}">
+                  <option value="">seleccione una opción</option>
+                  <option value="SOLTERO">SOLTERO</option>
+                  <option value="CASADO">CASADO</option>
+                  <option value="DIVORCIADO">DIVORCIADO</option>
+                  <option value="VIUDO">VIUDO</option>
+                </select>
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.estadoCivil')}"
+                    th:errors="*{asociadoDTO.estadoCivil}" data-error="true"></span>
+                </div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="grupoSanguineoActualizar">Grupo Sanguíneo</label>
+              <div class="miniSecciones">
+                <select class="input" id="grupoSanguineoActualizar" name="grupoSanguineo"
+                  th:field="*{asociadoDTO.grupoSanguineo}">
+                  <option value="">seleccione una opción</option>
+                  <option value="A+">A+</option>
+                  <option value="A-">A-</option>
+                  <option value="B+">B+</option>
+                  <option value="B-">B-</option>
+                  <option value="AB+">AB+</option>
+                  <option value="AB-">AB-</option>
+                  <option value="O+">O+</option>
+                  <option value="O-">O-</option>
+                </select>
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.grupoSanguineo')}"
+                    th:errors="*{asociadoDTO.grupoSanguineo}" data-error="true"></span>
+                </div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="telFijoActualizar">Tel Fijo</label>
+              <div class="miniSecciones">
+                <input class="input" id="telFijoActualizar" name="telFijo" type="number" maxlength="10"
+                  th:field="*{asociadoDTO.telFijo}">
+                <div class="espacio"></div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="telMovilActualizar">Tel Movil</label>
+              <div class="miniSecciones">
+                <input class="input" id="telMovilActualizar" name="telMovil" type="number" maxlength="10"
+                  th:field="*{asociadoDTO.telMovil}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.telMovil')}"
+                    th:errors="*{asociadoDTO.telMovil}" data-error="true"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="infoActualizar" id="infoActualizarCR">
+              <label class="labelActualizarDatos" for="emailActualizar">Email</label>
+              <div class="miniSecciones">
+                <input class="input" id="emailActualizar" name="email" type="text" th:field="*{asociadoDTO.email}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.email')}" th:errors="*{asociadoDTO.email}"
+                    data-error="true"></span>
+                </div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="calleActualizar">Calle</label>
+              <div class="miniSecciones">
+                <input class="input" id="calleActualizar" name="calle" type="text" th:field="*{asociadoDTO.calle}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.calle')}" th:errors="*{asociadoDTO.calle}"
+                    data-error="true"></span>
+                </div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="numeroActualizar">Número</label>
+              <div class="miniSecciones">
+                <input class="input" id="numeroActualizar" name="numero" type="number" maxlength="5"
+                  placeholder="si no posee numeración coloque 0" th:field="*{asociadoDTO.numero}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.numero')}"
+                    th:errors="*{asociadoDTO.numero}" data-error="true"></span>
+                </div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="pisoActualizar">Piso</label>
+              <div class="miniSecciones">
+                <input class="input" id="pisoActualizar" name="piso" type="text" th:field="*{asociadoDTO.piso}">
+                <div class="espacio"></div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="dptoActualizar">Dpto</label>
+              <div class="miniSecciones">
+                <input class="input" id="dptoActualizar" name="dpto" type="text" th:field="*{asociadoDTO.dpto}">
+                <div class="espacio"></div>
+              </div>
+
+            </div>
+
+
+            <div class="infoActualizar" id="infoActualizarR">
+
+              <label class="labelActualizarDatos" for="barrioActualizar">Barrio</label>
+              <div class="miniSecciones">
+                <input class="input" id="barrioActualizar" name="barrio" type="text" th:field="*{asociadoDTO.barrio}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.barrio')}"
+                    th:errors="*{asociadoDTO.barrio}" data-error="true"></span>
+                </div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="distritoActualizar">Distrito</label>
+              <div class="miniSecciones">
+                <input class="input" id="distritoActualizar" name="distrito" type="text"
+                  th:field="*{asociadoDTO.distrito}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.distrito')}"
+                    th:errors="*{asociadoDTO.distrito}" data-error="true"></span>
+                </div>
+
+              </div>
+
+
+              <label class="labelActualizarDatos" for="provinciaActualizar">Provincia</label>
+              <div class="miniSecciones">
+                <input class="input" id="provinciaActualizar" name="provincia" type="text"
+                  th:field="*{asociadoDTO.provincia}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.provincia')}"
+                    th:errors="*{asociadoDTO.provincia}" data-error="true"></span>
+                </div>
+              </div>
+
+
+              <label class="labelActualizarDatos" for="codigoPostalActualizar">Código Postal</label>
+              <div class="miniSecciones">
+                <input class="input" id="codigoPostalActualizar" name="codigoPostal" type="text"
+                  th:field="*{asociadoDTO.codigoPostal}">
+                <div class="espacio">
+                  <span class="error" th:if="${#fields.hasErrors('asociadoDTO.codigoPostal')}"
+                    th:errors="*{asociadoDTO.codigoPostal}" data-error="true"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="divBtnFormActualizarDatos">
+            <button id="btnFormActualizarDatos" type="submit">actualizar</button>
+          </div>
+
+
+        </form>
+      </div>
+      <button id="cerrarModalDatos">cerrar</button>
+    </div>
+
+
+  </dialog>
+
+  <!-- ------------------modal actualizar foto----------------- -->
+
+  <dialog id="fotoModifDialog">
+
+    <div id="divContenedorModalFoto">
+
+      <form id="formActualizarFoto" th:action="@{/imagen/actualizar}" method="post" enctype="multipart/form-data"
+        th:object="${asociadosDtoCompDTO}">
+
+        <div id="contenedorActualizarFoto">
+
+          <div class="fotoActualizar" id="fotoActualizarL">
+
+            <label for="fotoActualizarInput">subir foto</label>
+
+            <input id="fotoActualizarInput" name="archivo" type="file" th:field="*{asociadoFotoDTO.archivo}">
+            <div class="espacio">
+              <span class="errorFoto" th:if="${#fields.hasErrors('asociadoFotoDTO.archivo')}"
+                th:errors="*{asociadoFotoDTO.archivo}" data-error="true"></span>
+            </div>
+
+
+
+            <!-- ----------------------DATOS  OCULTOS---------------------- -->
+
+
+            <input hidden id="idAsocFotoHidden" name="idAsoc" type="text" th:field="*{asociadoDTO.idAsoc}">
+
+            <input id="apellidoFotoHidden" hidden name="apellido" type="text" th:field="*{asociadoDTO.apellido}">
+
+            <input id="nombreFotoHidden" hidden name="nombre" type="text" th:field="*{asociadoDTO.nombre}">
+
+            <select id="depatamentoLaboralFotoHidden" hidden name="depatamentoLaboral"
+              th:field="*{asociadoDTO.depatamentoLaboral}">
+              <option value="">seleccione una opción</option>
+              <option value="operaciones">OPERACIONES</option>
+              <option value="administración">ADMINISTRACION</option>
+            </select>
+
+            <input id="fechaNacimientoFotoHidden" hidden name="fechaNacimiento" class="InputAncho" type="date"
+              th:field="*{asociadoDTO.fechaNacimiento}">
+
+            <input id="nacionalidadFotoHidden" hidden name="nacionalidad" type="text"
+              th:field="*{asociadoDTO.nacionalidad}">
+
+            <input id="dniFotoHidden" hidden name="dni" type="number" maxlength="8" th:field="*{asociadoDTO.dni}">
+
+            <input id="cuilFotoHidden" hidden type="number" name="cuil" maxlength="11" th:field="*{asociadoDTO.cuil}">
+
+            <select id="estadoCivilFotoHidden" hidden name="estadoCivil" th:field="*{asociadoDTO.estadoCivil}">
+              <option value="">seleccione una opción
+              </option>
+              <option value="soltero">soltero</option>
+              <option value="casado">casado</option>
+              <option value="divorciado">divorciado</option>
+              <option value="viudo">viudo</option>
+            </select>
+
+            <select id="grupoSanguineoFotoHidden" hidden name="grupoSanguineo" th:field="*{asociadoDTO.grupoSanguineo}">
+              <option value="">seleccione una opción</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+
+            <input id="telFijoFotoHidden" hidden name="telFijo" type="number" maxlength="10"
+              th:field="*{asociadoDTO.telFijo}">
+
+            <input id="telMovilFotoHidden" hidden name="telMovil" type="number" maxlength="10"
+              th:field="*{asociadoDTO.telMovil}">
+
+            <input id="emailFotoHidden" hidden name="email" type="text" th:field="*{asociadoDTO.email}">
+
+            <input id="calleFotoHidden" hidden name="calle" type="text" th:field="*{asociadoDTO.calle}">
+
+            <input id="numeroFotoHidden" hidden name="numero" type="number" maxlength="5"
+              placeholder="si no posee numeración coloque 0" th:field="*{asociadoDTO.numero}">
+
+            <input id="pisoFotoHidden" hidden name="piso" type="text" th:field="*{asociadoDTO.piso}">
+
+            <input id="dptoFotoHidden" hidden name="dpto" th:field="*{asociadoDTO.dpto}">
+
+            <input id="barrioFotoHidden" hidden name="barrio" type="text" th:field="*{asociadoDTO.barrio}">
+
+            <input id="distritoFotoHidden" hidden name="distrito" type="text" th:field="*{asociadoDTO.distrito}">
+
+            <input id="provinciaFotoHidden" hidden name="provincia" type="text" th:field="*{asociadoDTO.provincia}">
+
+            <input id="codigoPostalFotoHidden" hidden name="codigoPostal" type="text"
+              th:field="*{asociadoDTO.codigoPostal}">
+
+          </div>
+
+        </div>
+
+        <button type="submit">actualizar</button>
+      </form>
+
+      <button id="cerrarModalFoto">cerrar</button>
+    </div>
+
+  </dialog>
+
+  <!-- ------------------modal actualizar habilitación----------------- -->
+
+
+  <dialog id="habilitacionModifDialog">
+
+    <div id="divContenedorModalhabilitacion">
+
+      <form id="formActualizarhabilitacion" th:action="@{/asociado/actualizarHabilitacion}" method="post"
+        th:object="${asociadosDtoCompDTO}">
+
+        <div id="contenedorActualizarhabilitacion">
+
+          <div class="habilitacionActualizar" id="habilitacionActualizar">
+
+            <label for="fotoActualizarInput">fecha habilitación</label>
+
+            <input id="habilitacionActualizarInput" name="habilitacion" type="date"
+              th:field="*{asociadoHabilitacionDTO.habilitacion}">
+            <div class="espacio">
+              <span class="errorHabilitacion" th:if="${#fields.hasErrors('asociadoHabilitacionDTO.habilitacion')}"
+                th:errors="*{asociadoHabilitacionDTO.habilitacion}" data-error="true"></span>
+            </div>
+
+
+
+            <!-- ----------------------DATOS  OCULTOS---------------------- -->
+
+
+            <input hidden id="idAsocHabilHidden" name="idAsoc" type="text" th:field="*{asociadoDTO.idAsoc}">
+
+            <input id="apellidoHabilHidden" hidden name="apellido" type="text" th:field="*{asociadoDTO.apellido}">
+
+            <input id="nombreHabilHidden" hidden name="nombre" type="text" th:field="*{asociadoDTO.nombre}">
+
+            <select id="depatamentoLaboralHabilHidden" hidden name="depatamentoLaboral"
+              th:field="*{asociadoDTO.depatamentoLaboral}">
+              <option value="">seleccione una opción</option>
+              <option value="operaciones">OPERACIONES</option>
+              <option value="administración">ADMINISTRACION</option>
+            </select>
+
+            <input id="fechaNacimientoHabilHidden" hidden name="fechaNacimiento" class="InputAncho" type="date"
+              th:field="*{asociadoDTO.fechaNacimiento}">
+
+            <input id="nacionalidadHabilHidden" hidden name="nacionalidad" type="text"
+              th:field="*{asociadoDTO.nacionalidad}">
+
+            <input id="dniHabilHidden" hidden name="dni" type="number" maxlength="8" th:field="*{asociadoDTO.dni}">
+
+            <input id="cuilHabilHidden" hidden type="number" name="cuil" maxlength="11" th:field="*{asociadoDTO.cuil}">
+
+            <select id="estadoCivilHabilHidden" hidden name="estadoCivil" th:field="*{asociadoDTO.estadoCivil}">
+              <option value="">seleccione una opción
+              </option>
+              <option value="soltero">soltero</option>
+              <option value="casado">casado</option>
+              <option value="divorciado">divorciado</option>
+              <option value="viudo">viudo</option>
+            </select>
+
+            <select id="grupoSanguineoHabilHidden" hidden name="grupoSanguineo"
+              th:field="*{asociadoDTO.grupoSanguineo}">
+              <option value="">seleccione una opción</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+
+            <input id="telFijoHabilHidden" hidden name="telFijo" type="number" maxlength="10"
+              th:field="*{asociadoDTO.telFijo}">
+
+            <input id="telMovilHabilHidden" hidden name="telMovil" type="number" maxlength="10"
+              th:field="*{asociadoDTO.telMovil}">
+
+            <input id="emailHabilHidden" hidden name="email" type="text" th:field="*{asociadoDTO.email}">
+
+            <input id="calleHabilHidden" hidden name="calle" type="text" th:field="*{asociadoDTO.calle}">
+
+            <input id="numeroHabilHidden" hidden name="numero" type="number" maxlength="5"
+              placeholder="si no posee numeración coloque 0" th:field="*{asociadoDTO.numero}">
+
+            <input id="pisoHabilHidden" hidden name="piso" type="text" th:field="*{asociadoDTO.piso}">
+
+            <input id="dptoHabilHidden" hidden name="dpto" type="text" th:field="*{asociadoDTO.dpto}">
+
+            <input id="barrioHabilHidden" hidden name="barrio" type="text" th:field="*{asociadoDTO.barrio}">
+
+            <input id="distritoHabilHidden" hidden name="distrito" type="text" th:field="*{asociadoDTO.distrito}">
+
+            <input id="provinciaHabilHidden" hidden name="provincia" type="text" th:field="*{asociadoDTO.provincia}">
+
+            <input id="codigoPostalHabilHidden" hidden name="codigoPostal" type="text"
+              th:field="*{asociadoDTO.codigoPostal}">
+
+          </div>
+
+        </div>
+
+        <button type="submit">actualizar</button>
+      </form>
+
+      <button id="cerrarModalhabilitacion">cerrar</button>
+    </div>
+
+  </dialog>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="/script/asociado.js"></script>
+</body>
+
+</html>

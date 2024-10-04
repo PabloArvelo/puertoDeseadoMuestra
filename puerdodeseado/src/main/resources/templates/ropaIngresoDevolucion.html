@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ingreso Uniformes-Devolución </title>
+   <link rel="stylesheet" href="/css/ropaIngresoDevolucion.css">
+   <link rel="stylesheet" href="/css/botones.css">
+</head>
+
+<body>
+   <div id="contenedor">
+      <input hidden th:value="${idAsoc}" name="idAsoc" id="hiddenID">    
+      <input hidden th:value="${cuil}" name="cuil" id="hiddenCUIL">  
+
+      <div id="compraRopaDiv">
+         <h1 id="titulo">DEVOLUCION de uniformes</h1>
+         <div id="itemSeleccion">
+            <select name="" id="prendaSelect">
+               <option value=""  disabled selected>Seleccione una prenda</option>
+            </select>
+            <select name="" id="talleSelect">
+               <option value="" selected disabled>Seleccione un talle</option>
+            </select>
+            <input type="text" id="cantidadInput">
+            <button type="button" id="agregarItem">agregar</button>
+         </div>
+      </div>
+
+      <div id="divTablaEnviar">
+         <h2>Lista de Reingreso</h2> <!-- tengo que esconde y luego mostrar junto con la tabla -->
+         <table id="tablaEnviarDevolucion">
+            <thead>
+               <tr>
+                  <th id="thPrenda">PRENDA</th>
+                  <th id="thTalle">TALLE</th>
+                  <th id="thCantidad">CANTIDAD</th>
+                  <th id="thTacho"></th>
+               </tr>
+            </thead>
+
+            <tbody>
+            </tbody>
+         </table>
+
+         <div>
+            <button id="enviarLista">enviar</button>
+         </div>
+
+      </div>
+
+      <div id="salir">
+         <button id="volverVistaAnterior" type="button">salir</button>
+      </div>
+
+
+   </div>
+
+   <script src="/script/ropaIngreDevolucion.js"></script>
+
+</body>
+
+</html>

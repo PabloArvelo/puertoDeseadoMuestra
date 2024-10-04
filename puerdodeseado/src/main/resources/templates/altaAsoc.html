@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta Asociado</title>
+    <link rel="stylesheet" href="/css/altaAsoc.css">
+    <link rel="stylesheet" href="/css/botones.css">
+</head>
+
+<body>
+
+
+
+
+    <div id="contenedor1">
+
+
+
+
+
+
+        <!-- en el form a continuación, enctype="multipart/form-data" se usa para enviar datos de formularios que incluyen 
+        archivos binarios, como imágenes, videos o documentos, al servidor. Sin este atributo, 
+        el servidor no podría interpretar correctamente los datos del formulario que contienen 
+        archivos adjuntos. -->
+        <form th:action="@{/asociado/alta}" method="post" enctype="multipart/form-data" th:object="${asociadoDTO}">
+
+
+
+            <div id="contenedor2">
+                <div id="principal" class="fixed-top">
+
+                    <div id="foto">
+                        <div id="imgContainer">
+                            <img src="/img/FotoPerfil2.png" alt=""><br>
+                        </div>
+                        <input type="file" name="archivo" th:field="*{archivo}">
+                        <span class="error" th:if="${errorArchivo}" th:text="${errorArchivo}"></span>
+
+                    </div>
+
+
+
+
+                    <div id="datosMain">
+                        <div class="secundario_AB">
+                            <label for="apellido">Apellido(s)</label>
+                            <input id="apellido" name="apellido" type="text" th:field="*{apellido}">
+                            <span class="error" th:if="${#fields.hasErrors('apellido')}" th:errors="*{apellido}"></span>
+
+                            <label for="nombre">Nombre(s)</label>
+                            <input id="nombre" name="nombre" type="text" th:field="*{nombre}">
+                            <span class="error" th:if="${#fields.hasErrors('nombre')}" th:errors="*{nombre}"></span>
+
+                        </div>
+
+                        <div class="secundario_AB">
+                            <label for="depatamentoLaboral">Departamento Laboral</label>                            
+
+                            <select id="depatamentoLaboral" name="depatamentoLaboral" th:field="*{depatamentoLaboral}">
+                                <option value="" th:selected="${#fields.hasErrors('depatamentoLaboral')}">seleccione una
+                                    opción</option>
+                                <option value="operaciones">OPERACIONES</option>
+                                <option value="administración">ADMINISTRACION</option>
+                            </select>
+                            <span class="error" th:if="${#fields.hasErrors('depatamentoLaboral')}"
+                                th:errors="*{depatamentoLaboral}"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div id="secundario" class="fixed-relative">
+
+                    <div id="secundario-contenido">
+                        <div class="secundario_AB">
+                            <label for="fechaNacimiento">Fecha de Nacimiento</label>
+                            <input id="fechaNacimiento" name="fechaNacimiento" class="InputAncho" type="date"
+                                th:field="*{fechaNacimiento}">
+                            <span class="error" th:if="${#fields.hasErrors('fechaNacimiento')}"
+                                th:errors="*{fechaNacimiento}"></span>
+
+                            <label for="nacionalidad">Nacionalidad</label>
+                            <input id="nacionalidad" name="nacionalidad" type="text" th:field="*{nacionalidad}">
+                            <span class="error" th:if="${#fields.hasErrors('nacionalidad')}"
+                                th:errors="*{nacionalidad}"></span>
+
+                            <label for="dni">DNI</label>
+                            <input id="dni" name="dni" type="number" maxlength="8" th:field="*{dni}">
+                            <span class="error" th:if="${#fields.hasErrors('dni')}" th:errors="*{dni}"></span>
+
+                            <label for="cuil">CUIL</label>
+                            <input type="number" id="cuil" name="cuil" maxlength="11" th:field="*{cuil}">
+                            <span class="error" th:if="${#fields.hasErrors('cuil')}" th:errors="*{cuil}"></span>
+                            <span class="error" th:if="${error != null}" th:text="${error}"></span>
+
+
+
+
+                            <label for="estadoCivil">Estado Civil</label>
+                            <select id="estadoCivil" name="estadoCivil" th:field="*{estadoCivil}">
+                                <!-- <option value="" disabled selected>seleccione una opción</option> -->
+                                <option value="" th:selected="${#fields.hasErrors('estadoCivil')}">seleccione una opción
+                                </option>
+                                <option value="soltero">SOLTERO</option>
+                                <option value="casado">CASADO</option>
+                                <option value="divorciado">DIVORCIADO</option>
+                                <option value="viudo">VIUDO</option>
+                            </select>
+                            <span class="error" th:if="${#fields.hasErrors('estadoCivil')}"
+                                th:errors="*{estadoCivil}"></span>
+
+                            <label for="grupoSanguineo">Grupo Sanguíneo</label>
+                            <select id="grupoSanguineo" name="grupoSanguineo" th:field="*{grupoSanguineo}">
+                                <!-- <option value="" disabled selected>seleccione una opción</option> -->
+                                <option value="" th:selected="${#fields.hasErrors('grupoSanguineo')}">seleccione una
+                                    opción</option>
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+                            </select>
+                            <span class="error" th:if="${#fields.hasErrors('grupoSanguineo')}"
+                                th:errors="*{grupoSanguineo}"></span>
+
+                            <label for="telFijo">Tel Fijo</label>
+                            <input id="telFijo" name="telFijo" type="number" maxlength="10">
+
+                            <label for="telMovil">Tel Movil</label>
+                            <input id="telMovil" name="telMovil" type="number" maxlength="10" th:field="*{telMovil}">
+                            <span class="error" th:if="${#fields.hasErrors('telMovil')}" th:errors="*{telMovil}"></span>
+
+                        </div>
+
+                        <div class="secundario_AB">
+                            <label for="email">Email</label>
+                            <input id="email" name="email" type="text" th:field="*{email}">
+                            <span class="error" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+
+                            <label for="calle">Calle</label>
+                            <input id="calle" name="calle" type="text" th:field="*{calle}">
+                            <span class="error" th:if="${#fields.hasErrors('calle')}" th:errors="*{calle}"></span>
+
+                            <label for="numero">Número</label>
+                            <input id="numero" name="numero" type="number" maxlength="5"
+                                placeholder="si no posee numeración coloque 0" th:field="*{numero}">
+                            <span class="error" th:if="${#fields.hasErrors('numero')}" th:errors="*{numero}"></span>
+
+                            <label for="piso">Piso</label>
+                            <input id="piso" name="piso" type="text">
+
+                            <label for="dpto">Dpto</label>
+                            <input id="dpto" name="dpto" type="text">
+
+                            <label for="barrio">Barrio</label>
+                            <input id="barrio" name="barrio" type="text" th:field="*{barrio}">
+                            <span class="error" th:if="${#fields.hasErrors('barrio')}" th:errors="*{barrio}"></span>
+
+                            <label for="distrito">Distrito</label>
+                            <input id="distrito" name="distrito" type="text" th:field="*{distrito}">
+                            <span class="error" th:if="${#fields.hasErrors('distrito')}" th:errors="*{distrito}"></span>
+
+                            <label for="provincia">Provincia</label>
+                            <input id="provincia" name="provincia" type="text" th:field="*{provincia}">
+                            <span class="error" th:if="${#fields.hasErrors('provincia')}"
+                                th:errors="*{provincia}"></span>
+
+                            <label for="codigoPostal">Código Postal</label>
+                            <input id="codigoPostal" name="codigoPostal" type="text" th:field="*{codigoPostal}">
+                            <span class="error" th:if="${#fields.hasErrors('codigoPostal')}"
+                                th:errors="*{codigoPostal}"></span>
+
+                        </div>
+                    </div>
+
+                    <div id="secundario-boton">
+                        <button type="submit">Guardar</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </form>
+
+        
+
+
+
+    </div>
+
+
+
+    
+</body>
+
+</html>
