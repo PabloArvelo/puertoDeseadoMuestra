@@ -35,7 +35,7 @@ al ser una coperativa, no cobran un sueldo, sino mensualmente un anticipo del re
     - Mysql
 - IDE IntelliJ Idea
 
-https://drive.google.com/file/d/1bgMHINAaaDFko2OpK669iJgaqgp_tbp4/view?usp=drive_link
+(https://drive.google.com/file/d/1bgMHINAaaDFko2OpK669iJgaqgp_tbp4/view?usp=drive_link)
 
 
    
