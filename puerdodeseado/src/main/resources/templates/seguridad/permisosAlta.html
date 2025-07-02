@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alta permiso</title>
+
+    <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+
+    <link rel="stylesheet" href="/css/seguridadTodasLasVistas.css">
+    <link rel="stylesheet" href="/css/barraLateral.css">
+    <link rel="stylesheet" href="/css/botonesSeguridad.css">
+    <link rel="stylesheet" href="/css/navBar.css">
+
+
+
+</head>
+
+<body>
+    <aside th:replace="seguridad/componentes/barraLateralCRUD :: aside"></aside>
+
+    <div id="contenedor">
+        <nav th:replace="componentes/navBar :: nav"></nav>
+        <h1>alta permiso</h1>
+
+        <form th:action="@{/seguridad/permisoGuardar}" method="post" th:object="${permisoDTO}">
+            
+
+            <div>
+                <label for="permiso">nuevo permiso</label>
+                <input type="text" id="permiso" name="permiso" required="required" th:field="*{permiso}">
+                <span th:if="${#fields.hasErrors('permiso')}" th:errors="*{permiso}" class="error"></span>
+            </div>
+            
+
+            <div>
+                <button type="submit">Guardar</button>
+            </div>
+        </form>
+
+    </div>
+
+    
+
+
+    <script src="/script/barraLateralSeguridadPermisoCRUD.js"></script>
+    <script src="/script/permisosAlta.js"></script>
+
+    
+</body>
+
+</html>

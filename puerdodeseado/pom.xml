@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>3.2.4</version>
+    <relativePath/> <!-- lookup parent from repository -->
+  </parent>
+
+  <groupId>com.PuertoDeseado</groupId>
+  <artifactId>puerto_deseado</artifactId>
+  <version>2.0.1</version>
+  <name>Puerto_Deseado</name>
+  <description>PD_Soft</description>
+
+  <properties>
+    <java.version>17</java.version>
+    <maven.test.skip>true</maven.test.skip>
+  </properties>
+
+
+  <dependencies>
+
+    <!--		DEPENDENCIAS DE SPRING BOOT-->
+
+    <!--		 Necesaria para el acceso a bases de datos usando JPA.-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+    </dependency>
+
+    <!--		Para el soporte de Thymeleaf como motor de plantillas.-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-thymeleaf</artifactId>
+    </dependency>
+
+    <!--		Para desarrollar aplicaciones web y RESTful.-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+    </dependency>
+
+    <!--		Para validación de datos.-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-validation</artifactId>
+    </dependency>
+
+    <!--		Para enviar correos electrónicos.-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-mail</artifactId>
+    </dependency>
+
+
+
+
+    <!--		DEPENDENCIAS DE BASES DE DATOS Y OTROS-->
+
+    <!--		Conector para MySQL.-->
+<!--    <dependency>-->
+<!--      <groupId>mysql</groupId>-->
+<!--      <artifactId>mysql-connector-java</artifactId>-->
+<!--      <version>8.0.33</version>-->
+<!--      <scope>runtime</scope>-->
+<!--    </dependency>-->
+
+    <dependency>
+      <groupId>com.mysql</groupId>
+      <artifactId>mysql-connector-j</artifactId>
+      <version>8.0.33</version>
+      <scope>runtime</scope>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/com.itextpdf/itext-core -->
+
+    <!--    Para manipulación de archivos PDF.-->
+    <dependency>
+      <groupId>com.itextpdf</groupId>
+      <artifactId>itext-core</artifactId>
+      <version>8.0.4</version>
+      <type>pom</type>
+    </dependency>
+
+    <!--    Para manejo de archivos CSV.-->
+    <dependency>
+      <groupId>com.opencsv</groupId>
+      <artifactId>opencsv</artifactId>
+      <version>5.5.2</version>
+    </dependency>
+
+
+
+
+<!--    https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml/5.3.0-->
+
+<!--    para menejo de archivos de microsoft        -->
+
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
+      <version>5.3.0</version>
+    </dependency>
+
+
+
+
+    <!--		DEPENDENCIAS DE PRUEBAS -->
+
+    <!--    Ambas para pruebas unitarias.-->
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!--    Para pruebas con Spring Boot.-->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-test</artifactId>
+      <version>3.3.0</version>
+      <scope>test</scope>
+    </dependency>
+
+
+
+
+
+    <!--		DEPENDENCIAS DE PRUEBAS -->
+
+    <!--    Dependencia de anotaciones para la integración con IntelliJ IDEA.-->
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>24.0.1</version>
+    </dependency>
+
+    <!--    Para reducir el boilerplate en el código-->
+    <!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.36</version>
+      <scope>provided</scope>
+    </dependency>
+
+
+<!--    Con esta dependencia, Maven buscará la librería en JitPack y la descargará cuando sea necesario.-->
+<!--    repositorio de github-->
+<!--    https://github.com/tenpisoft/numeros-a-letras-java?tab=readme-ov-file#maven-->
+    <dependency>
+      <groupId>com.github.tenpisoft</groupId>
+      <artifactId>n2w</artifactId>
+      <version>0.1.0</version>
+    </dependency>
+
+
+
+    <!--    para renderizar los recibos de anticippos de retorno-->
+<!--    https://mvnrepository.com/artifact/io.github.openhtmltopdf/openhtmltopdf-pdfbox &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>io.github.openhtmltopdf</groupId>-->
+<!--      <artifactId>openhtmltopdf-pdfbox</artifactId>-->
+<!--      <version>1.1.24</version>-->
+<!--    </dependency>-->
+
+
+    <!--    para renderizar los recibos de anticippos de retorno-->
+
+<!--    <dependency>-->
+<!--      <groupId>org.xhtmlrenderer</groupId>-->
+<!--      <artifactId>flying-saucer-pdf</artifactId>-->
+<!--      <version>9.11.2</version>-->
+<!--    </dependency>-->
+
+<!--    &lt;!&ndash; Commons IO para manejar archivos &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>commons-io</groupId>-->
+<!--      <artifactId>commons-io</artifactId>-->
+<!--      <version>2.14.0</version>-->
+<!--    </dependency>-->
+
+<!--    &lt;!&ndash; Para crear archivos ZIP &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>org.apache.commons</groupId>-->
+<!--      <artifactId>commons-compress</artifactId>-->
+<!--      <version>1.26.0</version>-->
+<!--    </dependency>-->
+
+
+
+    <dependency>
+      <groupId>com.docraptor</groupId>
+      <artifactId>docraptor</artifactId>
+      <version>2.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>jakarta.xml.bind</groupId>
+      <artifactId>jakarta.xml.bind-api</artifactId>
+      <version>4.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>javax.xml.bind</groupId>
+      <artifactId>jaxb-api</artifactId>
+      <version>2.3.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.jaxb</groupId>
+      <artifactId>jaxb-runtime</artifactId>
+      <version>4.0.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.module</groupId>
+      <artifactId>jackson-module-jaxb-annotations</artifactId>
+      <version>2.15.4</version>
+<!--      <scope>provided</scope>-->
+    </dependency>
+
+    <dependency>
+      <groupId>javax.ws.rs</groupId>
+      <artifactId>javax.ws.rs-api</artifactId>
+      <version>2.1.1</version> <!-- Asegúrate de usar la versión compatible con tu entorno -->
+    </dependency>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--		<dependency>-->
+    <!--			<groupId>org.jetbrains</groupId>-->
+    <!--			<artifactId>annotations</artifactId>-->
+    <!--			<version>RELEASE</version>-->
+    <!--			<scope>compile</scope>-->
+    <!--		</dependency>-->
+
+
+    <!--    ////////////////////////-->
+    <!--    para spring security habilitar las dos -->
+    <!--    ////////////////////////-->
+    		<dependency>
+    			<groupId>org.springframework.boot</groupId>
+    			<artifactId>spring-boot-starter-security</artifactId>
+    		</dependency>
+
+    		<dependency>
+    			<groupId>org.thymeleaf.extras</groupId>
+    			<artifactId>thymeleaf-extras-springsecurity6</artifactId>
+    		</dependency>
+    <!--    /////////////////////////-->
+
+
+
+    <!--		<dependency>-->
+    <!--			<groupId>org.springframework.security</groupId>-->
+    <!--			<artifactId>spring-security-test</artifactId>-->
+    <!--			<scope>test</scope>-->
+    <!--		</dependency>-->
+
+
+    <!-- https://mvnrepository.com/artifact/org.jsoup/jsoup -->
+<!--    para parcear el html recibido y extraer el nombre del asociado y agregarlo al nombre del recibo-->
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.20.1</version>
+    </dependency>
+
+
+    <!--    para megraciones de esquema de base de datos-->
+    <!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-core -->
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-core</artifactId>
+      <version>11.9.0</version>
+    </dependency>
+    <!-- https://mvnrepository.com/artifact/org.flywaydb/flyway-mysql -->
+    <dependency>
+      <groupId>org.flywaydb</groupId>
+      <artifactId>flyway-mysql</artifactId>
+      <version>11.9.0</version>
+    </dependency>
+
+
+  </dependencies>
+
+<!--  agregar JitPack como un repositorio-->
+<!--  me sirve para gestionar el repositorio de numeros a letras-->
+<!--  permitiendo a Maven buscar dependencias en JitPack.-->
+
+  <repositories>
+    <repository>
+      <id>jitpack.io</id>
+      <url>https://jitpack.io</url>
+    </repository>
+  </repositories>
+
+
+
+  <build>
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+
+        <configuration>
+          <source>17</source>
+          <target>17</target>
+          <release>17</release>
+          <annotationProcessorPaths>
+            <path>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+              <version>1.18.36</version>
+            </path>
+          </annotationProcessorPaths>
+        </configuration>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.0.0-M5</version>
+        <configuration>
+          <argLine>-Djdk.net.URLClassPath.disableClassPathURLCheck=true</argLine>
+        </configuration>
+      </plugin>
+
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>
+              <groupId>org.projectlombok</groupId>
+              <artifactId>lombok</artifactId>
+            </exclude>
+          </excludes>
+        </configuration>
+      </plugin>
+
+    </plugins>
+  </build>
+
+</project>

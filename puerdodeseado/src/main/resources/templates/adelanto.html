@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adelantos</title>
+
+    <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+    
+    <link rel="stylesheet" href="/css/adelanto.css">
+    <link rel="stylesheet" href="/css/respuestaDTO.css">
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="stylesheet" href="/css/navBar.css">
+
+
+
+</head>
+
+<body>
+    <nav th:replace="componentes/navBar :: nav"></nav>
+
+    <div id="contenedor">
+
+        <!-- capturo de manera oculta el ID -->
+        <input hidden th:value="${idAsoc}" name="idAsoc" id="idAsocFuente">
+
+        <h1 id="titulo">ENTREGA de adelanto</h1>
+
+
+        <!-- tabla de adelantos a descontar en proxima liquidadion -->
+
+        <table id="tablaAdelantosADescontar">
+
+            <div th:if="${adelantos}!=null">
+
+                <div class="subtitulo">
+                    <p>a descontar en próxima liquidación</p>
+                </div>
+
+                <thead>
+                    <tr>
+                        <th id="thFecha">FECHA ENTREGA</th>
+                        <th id="thMonto">MONTO</th>
+                    </tr>
+                </thead>
+
+                <tbody th:each="adelanto : ${adelantos}">
+                    <tr>
+                        <td class="detalle" th:text="${adelanto.fechaEntregado}"></td>
+                        <td class="detalle" th:text="${adelanto.monto}"></td>
+                    </tr>
+                </tbody>
+            </div>
+        </table>
+
+        <div class="subtitulo" th:if="${#vars.adelantos == null}">
+            <p th:text="${sinAsignar}"></p>
+        </div>
+
+
+
+
+
+
+
+        <form id="formAdelanto" th:action="@{/adelanto/asignarAdelanto/__${idAsoc}__}" method="post"
+            th:object="${adelantoDTO}">
+
+            <div id="contenedorAccion">
+
+                <div id="contenedorAccion1">
+
+                    <div id="datos">
+                        <label for="monto">monto</label>
+                        <input type="number" min="0" step="0.01" placeholder="0.00" name="monto" th:field="*{monto}"
+                            th:disabled="${deshabilitar}">
+
+                    </div>
+
+
+                    <div id="descuentaEnCheck">
+
+                        <label for="">opciones</label>
+
+                        <label class="switch">
+                            <input type="checkbox" id="miInterruptor" th:disabled="${deshabilitar}">
+                            <span class="slider"></span>
+                        </label>
+
+                        <!-- <label for="descuentaEn">descuenta en liquidación futura</label>
+                        <input id="checkBox" type="checkbox" name="descuentaEn"> -->
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div id="descuentaEnPeriodo">
+                <label for="descuentaEnLiquidacion">descontar en la liquid. de:</label>
+                <input id="descuentaEnLiquidacion" type="month" name="descuentaEnLiquidacion"
+                    th:field="*{descuentaEnLiquidacion}" th:disabled="${deshabilitar}">
+            </div>
+
+            <span class="error" th:if="${#fields.hasErrors('monto')}" th:errors="*{monto}"></span>
+
+            <div id="respuesta" th:if="${respuesta != null}" th:text="${respuesta.mensaje}"
+                th:classappend="${respuesta.exito} ? 'mensaje-exito' : 'mensaje-error'">
+                <span th:classappend="${respuesta.exito} ? 'mensaje-exito' : 'mensaje-error'"></span>
+            </div>
+
+            <div id="divBotonEnviar">
+                <button type="submit" th:if="${respuesta == null || !respuesta.exito}">guardar</button>
+            </div>
+
+            <div id="divBotonSalir">
+                <button id="botonSalir" th:if="${respuesta != null}" th:attr="hidden=${!respuesta.exito}" hidden>
+                    salir
+                </button>
+            </div>
+
+
+
+        </form>
+
+
+
+    </div>
+
+
+
+
+
+
+
+    <script src="/script/adelanto.js"></script>
+    <script src="/script/abrirCerrarAdelanto.js"></script>
+</body>
+
+</html>

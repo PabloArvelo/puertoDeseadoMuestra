@@ -1,0 +1,23 @@
+.mensaje-exito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(193, 245, 114);
+    color: green;    
+    position: absolute;
+    top: 220px;
+}
+
+.mensaje-error{    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    background-color: rgb(250, 194, 250);
+    color: red;
+    position: absolute;
+    top: 220px;
+}

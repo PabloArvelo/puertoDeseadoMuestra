@@ -1,0 +1,170 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+    background-color: #adbcc7;
+    color: #1d2124;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+    /* height: 500px; */
+}
+
+#contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    width: min-content;
+    height: 350px;
+    
+}
+
+
+#descuentaEnPeriodo{
+    margin-top: 10px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    border: #1d2124 solid;
+    
+}
+
+#formAdelanto{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    
+    align-items: center;
+    height: 300px;
+
+}
+
+#divBotonEnviar, #divBotonSalir{   
+    display: flex;
+    margin-top: 50px;
+    /* position: absolute;
+    top: 395px; */
+}
+
+
+
+
+/* ----------------- BOTON OPCIONES --------------- */
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+}
+
+/* Ocultar el checkbox original */
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Estilo del fondo del interruptor */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+/* Estilo del círculo deslizante */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* Cambia el fondo cuando está marcado */
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+/* Mueve el círculo cuando está marcado */
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+/* ---------------------------------------------- */
+
+
+
+
+
+#contenedorAccion, #contenedorAccion1{
+    display: flex;
+}
+
+
+.error{
+    color: red;
+}
+
+
+/* ----------------- TABLA ADELANTOS A DESCONTAR --------------- */
+
+#tablaAdelantosADescontar{
+    /* border: #1d2124 solid; */
+    width: 90%;
+    table-layout: fixed; /* Asegura que las celdas tengan un ancho fijo */
+    margin-bottom: 30px;
+}
+th{
+    background-color: #636B76;  
+}
+
+.detalle{
+    text-align: center;
+}
+td{
+    border-top: 1px solid black;
+    margin: 0;    
+}
+
+
+
+.subtitulo{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+#respuesta {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+     width: 100%;     
+     border-radius: 5px;
+}
+
+

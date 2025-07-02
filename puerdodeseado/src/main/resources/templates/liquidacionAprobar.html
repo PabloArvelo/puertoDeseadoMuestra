@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aprobar liquidación</title>
+
+  <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+
+  <link rel="stylesheet" href="/css/barraLateral.css">
+  <link rel="stylesheet" href="/css/liquidacionAprobar.css">
+  <link rel="stylesheet" href="/css/botones.css">
+
+  <script th:inline="javascript">
+    var csrfToken = /*[[${_csrf.token}]]*/ '';
+    var csrfHeader = /*[[${_csrf.headerName}]]*/ '';      
+  </script>
+
+
+</head>
+
+<body>
+
+  <input hidden th:value="${periodo}" name="periodo" id="periodo">
+
+  <!-- Barra lateral -->
+  <aside th:replace="componentes/barraLateral :: aside"></aside>
+
+  <div class="contenedor">
+    <h1>aprobar liquidación</h1>
+
+    <div class="table-container">
+      <table id="miTabla">
+        <thead>
+          <tr id="encabezado"></tr>
+        </thead>
+        <tbody id="cuerpo"></tbody>
+      </table>
+    </div>
+
+    <div id="divAprobacionContenedor">
+
+      <div id="divAprobacion">
+        <div id="datos">
+          <div id="divConceptos">
+            <h4>TOTAL ANTICIPOS</h4>
+          </div>
+          <div id="divValores">
+            <span class="spanValores" id="spanTotalAnticipos"></span>
+          </div>
+        </div>
+
+        <div id="divBtnAprobar">
+          <button id="btnAccion">aprobar</button>
+        </div>
+      </div>
+
+      <div id="divEliminacion">
+        <div id="divEliminarIzq"></div>
+        <div id="divEliminarDer">
+          <span>eliminar</span>
+          <input id="checkEliminar" type="checkbox">
+        </div>
+
+      </div>
+
+
+
+
+
+
+    </div>
+
+
+
+  </div>
+
+
+  <script src="/script/barraLateral.js"></script>
+  <script src="/script/liquidacionApobar.js"></script>
+</body>
+
+</html>

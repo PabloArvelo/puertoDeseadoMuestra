@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Luiquidación</title>
+
+    <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+
+    <link rel="stylesheet" href="/css/barraLateral.css">
+    <link rel="stylesheet" href="/css/editarLiquidacion.css">
+    <link rel="stylesheet" href="/css/anticipos.css">
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="stylesheet" href="/css/navBar.css">
+
+    <script th:inline="javascript">
+        var csrfToken = /*[[${_csrf.token}]]*/ '';
+        var csrfHeader = /*[[${_csrf.headerName}]]*/ '';
+    </script>
+
+
+
+</head>
+
+<body>
+    <!-- Barra lateral -->
+    <aside th:replace="componentes/barraLateral :: aside"></aside>
+
+    <!-- Contenido principal -->
+
+
+
+    <div id="contenedor">
+        <nav th:replace="componentes/navBar :: nav"></nav>
+        <div class="content">
+            <h1>Editar Liquidación</h1>
+
+
+            <div id="divIngresaDatos">
+                <label for="periodo">periodo</label>
+                <input id="periodo" name="periodo" type="month">
+                <button id="buscarLiquidacionPorPeriodo" type="button">buscar</button>
+            </div>
+    
+            <div id="divTabla">
+                <table id="tabla">
+                    <thead>
+                        <tr>
+                            <th class="thDatos thDatosApellido">APELLIDO</th>
+                            <th class="thDatos">NOMBRE</th>
+                            <th class="thDatos thDatosCuil">CUIL</th>
+                            <th class="thDatos thDatosTotalAnticipo">total anticipo</th>
+                            <th class="imgVerHeadYDatos">VER</th>
+                            
+                        </tr>
+                    </thead>
+    
+                    <tbody id="resultadoTablaBody">
+    
+                    </tbody>
+    
+                    <p class="pError" id="pNoExisteApellido"></p>
+    
+    
+    
+                </table>
+    
+            </div>
+        </div>
+
+        
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+    <script src="/script/barraLateral.js"></script>
+    <script src="/script/editarLiquidacion.js"></script>
+</body>
+
+</html>

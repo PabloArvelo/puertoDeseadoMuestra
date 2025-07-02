@@ -1,0 +1,59 @@
+dialog{
+    background-color: #828C9A;    
+
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#modalContenedorMain{  
+    background-color: #828C9A;     
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;       
+}
+
+#modalContenedor{
+    background-color: #828C9A;    
+    color: #1d2124;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    width: 600px;
+}
+
+.divFormModal{    
+    margin: 10px 50px 10px 50px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;    
+    align-items: center;    
+}
+
+.labelModal{
+    font-weight: 700;
+    font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+input{
+    margin: 10px;
+}
+
+/* el div con id=overlay es el efeccto de opacidad y transparencia al abrir el modal */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semitransparente */
+    display: none; /* Oculto por defecto */
+    z-index: 1; /* Asegura que esté por encima del contenido */
+}

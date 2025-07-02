@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #636B76;
+}
+button{
+    width: 200px;
+    height: 30px;
+}
+
+.container {
+    max-width: 400px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+#divAguarde{
+    display: none;    
+}
+
+#successMessage {
+    margin-top: 20px;
+    background-color: green;
+}
+
+.message {
+    color: rgb(146, 228, 146);
+    display: none;    
+}
+
+#errorMessage{
+    margin-top: 20px;
+    background-color: red;
+}
+
+.error {
+    color: rgb(255, 177, 177);
+    display: none;
+}

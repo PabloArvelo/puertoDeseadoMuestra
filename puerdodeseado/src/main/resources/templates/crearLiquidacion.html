@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Luiquidación</title>
+
+    <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+
+    <link rel="stylesheet" href="/css/barraLateral.css">
+    <link rel="stylesheet" href="/css/anticipos.css">
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="stylesheet" href="/css/crearLiquidacion.css">
+    <link rel="stylesheet" href="/css/navBar.css">
+
+
+
+
+</head>
+<!-- Barra lateral -->
+
+
+<body>
+    <aside th:replace="~{componentes/barraLateral :: aside}"></aside>
+
+
+
+    <!-- Contenido principal -->
+    <div id="contenedor">
+        <nav th:replace="componentes/navBar :: nav"></nav>
+        <h1>Crear Liquidación</h1>
+
+
+
+
+        <div id="contenedor2">
+
+            <div class="contenedor3">
+                <div class="titulos">
+                    <h2>descargar padrón</h2>
+                </div>
+                <div class="divAcciones">
+                    <button id="btnDescargar" type="button"></button>
+                </div>
+            </div>
+            <div class="contenedor3">
+                <div class="titulos">
+                    <h2>importar CSV</h2>
+                </div>
+                <div class="divAcciones">
+                    <form th:action="@{/liquidaciones/crearNuevaLiquidacion}" method="post"
+                        th:object="${crearLiquidacionDTO}" enctype="multipart/form-data">
+
+                        <div class="divDatos">
+                            <label for="periodo">período liquidación</label>
+                            <input id="periodo" type="month" th:field="*{periodoNuevaLiquidacion}">
+                        </div>
+                        <div class="divError">
+                            <span class="error" th:if="${#fields.hasErrors('periodoNuevaLiquidacion')}"
+                                th:errors="*{periodoNuevaLiquidacion}"></span>
+                        </div>
+
+                        <div class="divDatos">
+                            <label for="csv">importar CSV</label>
+                            <input id="csv" type="file" accept=".csv" th:field="*{archivoCSV}">
+                        </div>
+                        <div class="divError">
+                            <span class="error" th:if="${#fields.hasErrors('archivoCSV')}"
+                                th:errors="*{archivoCSV}"></span>
+                        </div>
+
+
+                        <div id="divBtnEnviar">
+                            <button type="submit">crear</button>
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+
+        </div>
+
+
+        <div id="respuesta" th:if="${respuesta != null}" th:utext="${respuesta.mensaje}"
+            th:classappend="${respuesta.exito} ? 'mensaje-exito' : 'mensaje-error'">
+
+            <!-- <span th:classappend="${respuesta.exito} ? 'mensaje-exito' : 'mensaje-error'"></span> -->            
+            
+            
+            
+        </div>
+
+        <div id="divBtnAprobar">
+            <!-- Botón solo si respuesta.exito es true -->
+        <button  id="btnAprobar" th:if="${respuesta.exito}" class="btn btn-primary">ver liquidacion</button>
+        </div>
+        
+
+    </div>
+
+
+
+
+
+
+
+    <script src="/script/barraLateral.js"></script>
+    <script src="/script/crearLiquidacion.js"></script>
+</body>
+
+</html>

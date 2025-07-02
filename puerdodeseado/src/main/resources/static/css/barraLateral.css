@@ -1,0 +1,51 @@
+/* Barra lateral */
+aside {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 18%; 
+    height: 97.4vh;    
+    
+    background-color: #343a40;        
+    padding-top: 20px;
+
+    font-family: sans-serif;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra */
+    
+}
+
+.divBtns {
+    margin: 10px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.btnsBarra {
+    margin: 10px 0;
+    width: 80%;
+    height: 100px;
+    font: inherit;
+    
+    /* margin: 20px 0px 20px 0px; */
+}
+
+.btnsBarraAbajo{    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 30px;
+    margin-bottom: 10px;    
+    font: inherit;
+}
+
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}

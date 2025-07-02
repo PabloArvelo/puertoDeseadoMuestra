@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir Por Objetivo</title>
+
+    <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+
+    <link rel="stylesheet" href="/css/barraLateral.css">
+    <link rel="stylesheet" href="/css/anticipos.css">
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="stylesheet" href="/css/imprimirPorObjetivo.css">
+    <link rel="stylesheet" href="/css/navBar.css">
+
+
+
+</head>
+
+<body>
+    <!-- Barra lateral -->
+    <aside th:replace="componentes/barraLateral :: aside"></aside>
+    <div class="content">
+        <nav th:replace="componentes/navBar :: nav"></nav>
+        <h1>Seleccionar período + objetivo</h1>
+        <div>
+            <select name="" id="periodoSelect">
+                <option value="" selected disabled>Seleccione un período</option>
+            </select>
+            <select name="" id="objetivoSelect">
+                <option value="" selected disabled>Seleccione un objetivo</option>
+            </select>
+            <button id="btnBuscar">buscar</button>
+        </div>
+        
+        <div id="contenedorTabla">
+
+            <div id="divTabla">
+                <table id="tabla">
+                    <thead>
+                        <tr>
+                            <th>asociado</th>
+                            <th>cuil</th>
+                            <th>anticipo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaBody"></tbody>
+                </table>
+            </div>
+
+            <div id="divImprimir">
+                <button id="btnImprimirRecibos">imprimir</button>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <script src="/script/barraLateral.js"></script>
+    <script src="/script/imprimirPorObjetivo.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liquidación</title>
+
+    <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+
+    <link rel="stylesheet" href="/css/liquidacion.css">
+    <link rel="stylesheet" href="/css/botones.css">
+
+    <script th:inline="javascript">
+        var csrfToken = /*[[${_csrf.token}]]*/ '';
+        var csrfHeader = /*[[${_csrf.headerName}]]*/ '';
+    </script>
+
+</head>
+
+<body>
+    <h1 id="titulo"></h1>
+
+    <div id="contenedorMain">
+
+
+        <!-- hola valen -->
+
+
+        <!-- horas -->
+        <div id="contenedor1">
+
+            <div id="divTituloHoras">
+                <h2>HORAS</h2>
+            </div>
+
+            <div class="grupo" id="contenedorHoras">
+
+                <div id="contHsIzq">
+                    <div class="divHoras">
+                        <div class="numero">1</div>
+                        <div class="divHorasInterior">
+                            <label for="horas1">horas</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="horas1" name="horas1">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="minutos1">minutos</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="minutos1" name="minutos1">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="valorHora1">valorHora</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="valorHora1" name="valor_hora1">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="objetivo1">objetivo</label>
+                            <div>
+                                <select class="inputHoras" name="objetivo1" id="objetivo1"></select>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divHoras">
+                        <div class="numero">3</div>
+                        <div class="divHorasInterior">
+                            <label for="horas3">horas</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="horas3" name="horas3">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="minutos3">minutos</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="minutos3" name="minutos3">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="valorHora3">valorHora</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="valorHora3" name="valor_hora3">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="objetivo3">objetivo</label>
+                            <div>
+                                <select class="inputHoras" name="objetivo3" id="objetivo3"></select>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divHoras">
+                        <div class="numero">5</div>
+                        <div class="divHorasInterior">
+                            <label for="horas5">horas</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="horas5" name="horas5">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="minutos5">minutos</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="minutos5" name="minutos5">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="valorHora5">valorHora</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="valorHora5" name="valor_hora5">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="objetivo5">objetivo</label>
+                            <div>                                
+                                <select class="inputHoras" name="objetivo5" id="objetivo5"></select>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divHoras">
+                        <div class="numero">7</div>
+                        <div class="divHorasInterior">
+                            <label for="horas7">horas</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="horas7" name="horas7">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="minutos7">minutos</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="minutos7" name="minutos7">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="valorHora7">valorHora</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="valorHora7" name="valor_hora7">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="objetivo7">objetivo</label>
+                            <div>                                
+                                <select class="inputHoras" name="objetivo7" id="objetivo7"></select>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divHoras">
+                        <div class="numero">9</div>
+                        <div class="divHorasInterior">
+                            <label for="horas9">horas</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="horas9" name="horas9">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="minutos9">minutos</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="minutos9" name="minutos9">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="valorHora9">valorHora</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="valorHora9" name="valor_hora9">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="objetivo9">objetivo</label>
+                            <div>                                
+                                <select class="inputHoras" name="objetivo9" id="objetivo9"></select>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contHsDer">
+                    <div class="divHoras">
+                        <div class="numero">2</div>
+                        <div class="divHorasInterior">
+                            <label for="horas2">horas</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="horas2" name="horas2">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="minutos2">minutos</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="minutos2" name="minutos2">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="valorHora2">valorHora</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="valorHora2" name="valor_hora2">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="objetivo2">objetivo</label>
+                            <div>                                                                
+                                <select class="inputHoras" name="objetivo2" id="objetivo2"></select>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divHoras">
+                        <div class="numero">4</div>
+                        <div class="divHorasInterior">
+                            <label for="horas4">horas</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="horas4" name="horas4">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="minutos4">minutos</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="minutos4" name="minutos4">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="valorHora4">valorHora</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="valorHora4" name="valor_hora4">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="objetivo4">objetivo</label>
+                            <div>                                
+                                <select class="inputHoras" name="objetivo4" id="objetivo4"></select>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divHoras">
+                        <div class="numero">6</div>
+                        <div class="divHorasInterior">
+                            <label for="horas6">horas</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="horas6" name="horas6">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="minutos6">minutos</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="minutos6" name="minutos6">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="valorHora6">valorHora</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="valorHora6" name="valor_hora6">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="objetivo6">objetivo</label>
+                            <div>                                
+                                <select class="inputHoras" name="objetivo6" id="objetivo6"></select>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divHoras">
+                        <div class="numero">8</div>
+                        <div class="divHorasInterior">
+                            <label for="horas8">horas</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="horas8" name="horas8">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="minutos8">minutos</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="minutos8" name="minutos8">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="valorHora8">valorHora</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="valorHora8" name="valor_hora8">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="objetivo8">objetivo</label>
+                            <div>                                
+                                <select class="inputHoras" name="objetivo8" id="objetivo8"></select>                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divHoras">
+                        <div class="numero">10</div>
+                        <div class="divHorasInterior">
+                            <label for="horas10">horas</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="horas10" name="horas10">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="minutos10">minutos</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="minutos10" name="minutos10">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="valorHora10">valorHora</label>
+                            <div>
+                                <input class="inputHoras" type="text" id="valorHora10" name="valor_hora10">
+                            </div>
+                        </div>
+                        <div class="divHorasInterior">
+                            <label for="objetivo10">objetivo</label>
+                            <div>                                
+                                <select class="inputHoras" name="objetivo10" id="objetivo10"></select>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="grupo" id="contenedorValores">
+            <div id="contenedorValoresArriba">
+
+                <div id="contenedor2">
+
+                    <div id="divTituloSuman">
+                        <h2>SUMAN</h2>
+                    </div>
+
+
+                    <div class="ValoresIzqDer">
+                        <!-- suman -->
+                        <div class="contenedorSumaResta">
+                            <div class="SubValoresIzqDer">
+                                <div class="grupitos">
+                                    <label class="labelValores" for="bonificaciones">bonificaciones</label>
+                                    <input type="text" id="bonificaciones" name="bonificaciones" disabled>
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="presentismo">presentismo</label>
+                                    <input type="text" id="presentismo" name="presentismo">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="nocturnidad">nocturnidad</label>
+                                    <input type="text" id="nocturnidad" name="nocturnidad">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="nocturnidadEventual">nocturnidadEventual</label>
+                                    <input type="text" id="nocturnidadEventual" name="nocturnidad_eventual">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="bonificacionFeriados">bonificacionFeriados</label>
+                                    <input type="text" id="bonificacionFeriados" name="bonificacion_feriados">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="reconocimientoHoras">reconocimientoHoras</label>
+                                    <input type="text" id="reconocimientoHoras" name="reconocimiento_horas">
+                                </div>
+
+                            </div>
+                            <div class="SubValoresIzqDer">
+                                <div class="grupitos">
+                                    <label class="labelValores" for="carpetaMedica">carpetaMedica</label>
+                                    <input type="text" id="carpetaMedica" name="carpeta_medica">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="hsVacaciones">hsVacaciones</label>
+                                    <input type="text" id="hsVacaciones" name="hs_vacaciones">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="horasAdeudadas">horasAdeudadas</label>
+                                    <input type="text" id="horasAdeudadas" name="horas_adeudadas">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="licenciaMaternidad">licenciaMaternidad</label>
+                                    <input type="text" id="licenciaMaternidad" name="licencia_maternidad">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="horasPractica">horasPractica</label>
+                                    <input type="text" id="horasPractica" name="horas_practica">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores"
+                                        for="reintegroCuotasSociales">reintegroCuotasSociales</label>
+                                    <input type="text" id="reintegroCuotasSociales" name="reintegro_cuotas_sociales">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contenedor3">
+                    <div id="divTituloRestan">
+                        <h2>DEDUCCIONES</h2>
+                    </div>
+                    <div class="ValoresIzqDer">
+                        <!-- restan -->
+                        <div class="contenedorSumaResta">
+                            <div class="SubValoresIzqDer">
+                                <div class="grupitos">
+                                    <label class="labelValores" for="cuotaSocial">cuotaSocial</label>
+                                    <input type="text" id="cuotaSocial" name="cuota_social" disabled>
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="seguroAccPer_Vida">seguroAccPer_Vida</label>
+                                    <input type="text" id="seguroAccPer_Vida" name="seguro_acc_per_vida">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="retenMonotriPer">retenMonotriPer</label>
+                                    <input type="text" id="retenMonotriPer" name="reten_monotri_per">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="seguroVidaOblig">seguroVidaOblig</label>
+                                    <input type="text" id="seguroVidaOblig" name="seguro_vida_oblig">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="adelanto">adelanto</label>
+                                    <input type="text" id="adelanto" name="adelanto" disabled>
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="prestamo">prestamo</label>
+                                    <input type="text" id="prestamo" name="prestamo">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="cuotaActual">cuotaActual</label>
+                                    <input type="text" id="cuotaActual" name="cuota_actual" disabled>
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="interes">interes</label>
+                                    <input type="text" id="interes" name="interes" disabled>
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="costoHabilitacion">costoHabilitacion</label>
+                                    <input type="text" id="costoHabilitacion" name="costo_habilitacion">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="aptoPsiFi">aptoPsiFi</label>
+                                    <input type="text" id="aptoPsiFi" name="apto_psi_fi">
+                                </div>
+
+                            </div>
+                            <div class="SubValoresIzqDer">
+                                <div class="grupitos">
+                                    <label class="labelValores" for="credisolCS">credisolCS</label>
+                                    <input type="text" id="credisolCS" name="credisolcs">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="credisolCC">credisolCC</label>
+                                    <input type="text" id="credisolCC" name="credisolcc">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores"
+                                        for="creditoGUPAServicioSAS">creditoGUPAServicioSAS</label>
+                                    <input type="text" id="creditoGUPAServicioSAS" name="creditogupaserviciosas">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="almacen">almacen</label>
+                                    <input type="text" id="almacen" name="almacen">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="embargoJudicial">embargoJudicial</label>
+                                    <input type="text" id="embargoJudicial" name="embargo_judicial">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="depositoExceso">depositoExceso</label>
+                                    <input type="text" id="depositoExceso" name="deposito_exceso">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores"
+                                        for="descuentoRoturaPerdida">descuentoRoturaPerdida</label>
+                                    <input type="text" id="descuentoRoturaPerdida" name="descuento_rotura_perdida">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="calzado">calzado</label>
+                                    <input type="text" id="calzado" name="calzado">
+                                </div>
+                                <div class="grupitos">
+                                    <label class="labelValores" for="adherenteMonotributo">adherenteMonotributo</label>
+                                    <input type="text" id="adherenteMonotributo" name="adherente_monotributo">
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="contenedorValoresAbajo">
+                <!-- Totales -->
+                <div class="" id="contenedorTotales">
+                    <div class="grupitosTotales">
+                        <label for="totalBruto">totalBruto</label>
+                        <input type="text" id="totalBruto">
+                    </div>
+                    <div class="grupitosTotales">
+                        <label for="totalDeducciones">totalDeducciones</label>
+                        <input type="text" id="totalDeducciones">
+                    </div>
+                    <div class="grupitosTotales">
+                        <label for="totalAnticipo">totalAnticipo</label>
+                        <input type="text" id="totalAnticipo">
+                    </div>
+                </div>
+
+                <div id="divBtnGuardar">
+                    <button class="grupo" id="btnGuardar">guardar</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="/script/liquidacion.js"></script>
+</body>
+
+</html>

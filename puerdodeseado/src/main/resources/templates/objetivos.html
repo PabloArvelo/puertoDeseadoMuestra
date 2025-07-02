@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Objetivos Activos</title>
+    
+    <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+
+    <link rel="stylesheet" href="/css/objetivos.css">
+</head>
+<body>
+    <h1>listado de objetivos</h1>
+
+    <div id="divTabla">
+        <table id="tablaObjetivos">
+            <thead>
+                <tr>
+                    <th class="thDatos" id="objId">id</th>
+                    <th class="thDatos" id="objNombre">nombre</th>
+                    <th class="thDatos" id="objDomicilio">domicilio</th>
+                    <th class="thDatos" id="objTelefono">telefono</th>
+                    <th class="thDatos" id="objAlias">alias</th>
+                </tr>
+            </thead>
+            <tbody id="tablaBody"></tbody>
+        </table>
+    </div>    
+    
+
+    <script src="/script/objetivos.js"></script>
+
+
+</body>
+</html>

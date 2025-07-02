@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seguridad</title>
+
+    <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+
+    <link rel="stylesheet" href="/css/seguridadTodasLasVistas.css">
+    <link rel="stylesheet" href="/css/barraLateral.css">
+    <link rel="stylesheet" href="/css/botonesSeguridad.css">
+    <link rel="stylesheet" href="/css/navBar.css">
+
+
+</head>
+<body>    
+
+    <aside th:replace="seguridad/componentes/barraLateralCRUD :: aside"></aside>
+
+    <div id="contenedor">
+        <nav th:replace="componentes/navBar :: nav"></nav>
+        <h1>Usuarios</h1>
+
+        <h3>acá puedo poner una tabla con todos los usuarios</h3>
+    </div>
+
+    <script src="/script/barraLateralSeguridadUsuarioCRUD.js"></script>
+</body>
+</html>

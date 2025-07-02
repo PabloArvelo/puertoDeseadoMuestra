@@ -1,0 +1,176 @@
+body {
+  margin: 0;
+  display: flex;
+  background-color: #adbcc7;
+  height: 100vh;
+  font-family: Arial, Helvetica, Verdana, sans-serif;
+}
+
+#contenedor {
+  display: flex;
+  /* Flex para centrar contenido */
+  flex-direction: column;
+  /* Contenido como columna */
+  align-items: center;
+  /* Centra horizontalmente */
+  justify-content: start;
+  /* Centra verticalmente */
+  padding: 20px;
+  width: 80%;
+  /* Ocupa el 80% del ancho */
+
+}
+
+.table-container {
+  width: 90%;
+  max-height: 70%;
+  /* Ajusta según necesidad */
+  overflow: auto;
+  /* Permite scroll horizontal y vertical */
+  position: relative;
+  border: 1px solid #ccc;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: auto;
+  font-size: smaller;
+
+}
+
+th,
+td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  white-space: nowrap;
+  /* Evita que el texto se divida en varias líneas */
+  text-align: left;
+}
+
+/* Encabezados fijos */
+thead th:first-child,
+th:not(:first-child) {
+  position: sticky;
+  top: 0;
+  background-color: #212529;
+  color: #e9ecef;
+  z-index: 3;
+}
+
+thead th:not(:first-child) {
+  position: sticky;
+  top: 0;
+  background-color: #212529;
+  color: #e9ecef;
+  z-index: 2;
+}
+
+/* Primera columna fija */
+th:first-child,
+td:first-child {
+  position: sticky;
+  left: 0;
+  background-color: #212529;
+  color: #e9ecef;
+  z-index: 2;
+}
+
+
+.borde-derecha {
+  border-right: 2px solid black;
+  /* Ajusta el grosor y color según prefieras */
+}
+
+table tr:nth-child(odd) {
+  background-color: #f2f2f2;
+  /* Fila impar con fondo blanco */
+}
+
+table tr:nth-child(even) {
+  background-color: #d8d5d5;
+  /* Fila par con fondo gris claro */
+}
+
+#divBtnAprobar {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;  
+}
+
+#btnAccion {
+  width: 200px;
+  height: 50px;
+}
+
+#divAprobacionContenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 90%;
+  height: 20%;
+  /* background-color: #575a5c; */
+}
+
+#divAprobacion {
+  display: flex;
+  height: 70%;
+  width: 50%;
+}
+
+#datos,
+#divBtnAprobar {
+  display: flex;
+  align-items: center;
+}
+
+#datos {
+  width: 300px;
+  width: 70%;
+  /* background-color: #e9ecef; */
+}
+
+#divBtnAprobar {
+  height: 100%;
+  margin: 0;
+  width: 30%;
+}
+
+#divConceptos,
+#divValores {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#divConceptos {
+  display: flex;
+  justify-content: end;
+}
+
+#divValores {
+  display: flex;
+  justify-items: left;
+
+}
+.spanValores{
+  margin-left: 10px;
+}
+
+#divEliminacion{
+  display: flex;
+  width: 50%;
+}
+
+#divEliminarIzq{
+  width: 70%;
+}
+#divEliminarDer{
+  display: flex;
+  justify-content: center;
+  width: 30%;
+}
+#checkEliminar{
+  margin-left: 10px;
+}

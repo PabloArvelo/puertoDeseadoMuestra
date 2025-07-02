@@ -1,0 +1,76 @@
+#contenedor{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+
+}
+
+.ojito {
+    width: 25px;       
+}
+.imgVer {
+    width: 25px;       
+}
+
+
+/* ------------------ TABLA BUSCAR POR APELLIDO ------------------ */
+#divTabla{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0px 100px 0px;
+}
+#tabla{ 
+    width: 100%;
+    table-layout: fixed; /* Asegura que las celdas tengan un ancho fijo */
+    /* margin-bottom: 30px; */    
+}
+
+.datos{
+    width: 30%; /* Ancho fijo para las celdas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    text-align: left; /* Alineación del texto en el centro */   
+    border-top: 1px solid black;
+    
+}
+.thDatos{    
+    width: 30%; /* Ancho fijo para las celdas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    text-align: left; /* Alineación del texto en el centro */
+    
+    color: antiquewhite;
+    background-color: #636B76;
+}
+.thDatosApellido, .tdDatosApellido{
+    padding-left: 10px;
+}
+.thDatosCuil, .thDatosTotalAnticipo{
+    width: 10%
+}
+
+.ojito{    
+    width: 10%; /* Ancho fijo para las celdas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    text-align: center; /* Alineación del texto en el centro */    
+    border-top: 1px solid black;  
+}
+
+.imgVerHeadYDatos{
+    width: 50px; /* Ancho fijo para las celdas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    text-align: center; /* Alineación del texto en el centro */
+
+    background-color: #636B76;
+    color: antiquewhite;
+    
+}

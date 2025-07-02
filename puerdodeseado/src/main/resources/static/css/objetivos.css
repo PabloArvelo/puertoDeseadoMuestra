@@ -1,0 +1,74 @@
+body {
+    display: flex;
+    flex-direction: column;    
+    justify-content: center;
+    align-items: center;
+    background-color: #adbcc7;
+    color: #1d2124;
+    font-family: Arial, Helvetica, Verdana, sans-serif;    
+}
+h1{
+    position: fixed;
+    top: 0;    
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin: 0;
+    padding: 10px 0;
+    
+    z-index: 1000;
+    background-color: #636B76;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#divTabla{
+    position: relative;
+    top: 50px;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    
+ } 
+ #tablaObjetivos{ 
+    width: 65%;
+    table-layout: auto; /*  Asegura que las celdas tengan un ancho fijo */
+
+}  
+ thead{
+    position: sticky;
+    top: 60px;    
+    z-index: 1000;
+ }
+ tbody{
+    overflow-y: auto;
+    font-size: small;
+ }
+
+ .datos{
+    /* width: 30%;  *//* Ancho fijo para las celdas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    text-align: left; /* Alineación del texto en el centro */   
+    border-top: 1px solid black;    
+}
+
+.thDatos{    
+    /* width: 30%; */ /* Ancho fijo para las celdas */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap; /* Evita que el texto se envuelva */
+    text-align: left; /* Alineación del texto en el centro */
+    
+    color: antiquewhite;
+    background-color: #212529;
+    
+}
+ 
+
+
+
+

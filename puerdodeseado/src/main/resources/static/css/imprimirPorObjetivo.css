@@ -1,0 +1,20 @@
+#contenedorTabla{
+    display: none;
+    flex-direction: column;
+    align-items: end;
+}
+#divTabla{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    width: 100%;
+    margin: 20px 0px 100px 0px;  
+    text-align: left;  
+}
+
+#tabla{ 
+    width: 100%;
+    /* table-layout: fixed; */ /* Asegura que las celdas tengan un ancho fijo */
+    /* margin-bottom: 30px; */    
+}

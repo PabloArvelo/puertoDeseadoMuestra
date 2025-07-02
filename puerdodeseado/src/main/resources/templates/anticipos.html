@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anticipos de Retorno</title>
+
+    <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+
+    <link rel="stylesheet" href="/css/barraLateral.css">
+    <link rel="stylesheet" href="/css/anticipos.css">
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="stylesheet" href="/css/navBar.css">
+
+
+    
+</head>
+<body>
+    
+
+    <!-- Barra lateral -->
+  <aside th:replace="componentes/barraLateral :: aside"></aside>
+
+  
+
+    <!-- Contenido principal -->
+    <div class="content">
+        <nav th:replace="componentes/navBar :: nav"></nav>
+        <h1>Anticipos de retorno</h1>
+        <p>elija una acción en el panel izquierdo</p>
+    </div>
+
+
+
+
+    <script src="/script/barraLateral.js"></script>
+</body>
+</html>

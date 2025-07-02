@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Préstamos</title>
+
+    <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+
+    <link rel="stylesheet" href="/css/prestamo.css">
+    <link rel="stylesheet" href="/css/respuestaDTO.css">
+    <link rel="stylesheet" href="/css/botones.css">
+    <link rel="stylesheet" href="/css/navBar.css">
+
+
+</head>
+
+<body>
+    <nav th:replace="componentes/navBar :: nav"></nav>
+
+    <div id="contenedor">
+
+        <!-- capturo de manera oculta el ID -->
+        <input hidden th:value="${idAsoc}" name="idAsoc" id="idAsocFuente">
+
+
+        <h1 id="titulo">OTORGAMIENTO de prestamo</h1>
+
+        <!-- tabla de cuotas de prestamo a descontar en proxima liquidadion -->
+
+        <table id="tablaPrestamosADescontar">
+
+            <div th:if="${prestamos}!=null">
+
+                <div class="subtitulo">
+                    <p>a descontar en próxima liquidación</p>
+                </div>
+
+                <thead>
+                    <tr>
+                        <th id="thCuotaActual">CUOTA</th>
+                        <th id="thMonto">MONTO</th>
+                    </tr>
+                </thead>
+
+                <tbody th:each="prestamo : ${prestamos}">
+                    <tr>
+                        <td class="detalle" th:text="${prestamo.cuotaActual}"></td>
+                        <td class="detalle" th:text="${prestamo.monto}"></td>
+                    </tr>
+                </tbody>
+            </div>
+        </table>
+
+        <div class="subtitulo" th:if="${#vars.prestamos == null}">
+            <p th:text="${sinAsignar}"></p>
+        </div>
+
+
+
+
+
+
+        
+
+        <form id="formPrestamo" th:action="@{/prestamo/asignarPrestamo/__${idAsoc}__}" method="post"
+            th:object="${prestamoDTO}">
+
+            <div id="interesContenedor">
+                <div id="divCheck">
+                    <label for="intSiNo">¿con interés?</label>
+                    <input id="intSiNo" type="checkbox" name="activo" th:field="*{intSiNo}"
+                        th:disabled="${deshabilitar}" />
+                </div>
+
+                <div class="datos">
+                    <label for="interes">interes</label>
+
+                    <input id="interes" name="interes" type="text" placeholder="%"
+                        onfocus="quitarSimboloPorcentaje(this)" onblur="agregarSimboloPorcentaje(this)"
+                        th:field="*{interes}" th:disabled="${deshabilitar}" />
+
+                    <span id="spanErrorInteres" class="error" th:if="${interes != null}" th:text="${interes}"></span>
+                </div>
+
+            </div>
+
+
+
+
+            <div class="datos">
+                <label for="monto">monto</label>
+                <div class="grupoValidacion">
+                    <input id="monto" name="monto" type="number" th:field="*{montoPrestamo}"
+                        th:disabled="${deshabilitar}" />
+                    <span class="error" th:if="${#fields.hasErrors('montoPrestamo')}"
+                        th:errors="*{montoPrestamo}"></span>
+                </div>
+            </div>
+
+
+            <div class="datos">
+                <label for="cantidadCuotas">cantidad cuotas</label>
+                <div class="grupoValidacion">
+                    <input id="cantidadCuotas" name="cantidadCuotas" type="number" th:field="*{cantidadCuotas}"
+                        th:disabled="${deshabilitar}" />
+                    <span class="error" th:if="${#fields.hasErrors('cantidadCuotas')}"
+                        th:errors="*{cantidadCuotas}"></span>
+                </div>
+            </div>
+
+
+
+            <div class="datos">
+                <label for="primeraCuota">primera cuota</label>
+                <div class="grupoValidacion">
+                    <input id="primeraCuota" name="primeraCuota" type="month" th:field="*{primeraCuota}"
+                        th:disabled="${deshabilitar}" />
+                    <span class="error" th:if="${#fields.hasErrors('primeraCuota')}" th:errors="*{primeraCuota}"></span>
+                </div>
+            </div>
+
+            <!-- <span class="error" th:if="${#fields.hasErrors('montoPrestamo')}" th:errors="*{montoPrestamo}"></span> -->
+
+
+
+
+
+            <div id="divBotonEnviar">
+                <button type="submit" id="botonEnviar" th:if="${respuesta == null || !respuesta.exito}">
+                    guardar
+                </button>
+            </div>
+
+            <div id="respuesta" th:if="${respuesta != null}" th:text="${respuesta.mensaje}"
+                th:classappend="${respuesta.exito} ? 'mensaje-exito' : 'mensaje-error'">
+                <span th:classappend="${respuesta.exito} ? 'mensaje-exito' : 'mensaje-error'"></span>
+            </div>
+
+            <div id="divBotonSalir">
+                <button id="botonSalir" th:if="${respuesta != null}" th:attr="hidden=${!respuesta.exito}" hidden>
+                    salir
+                </button>
+            </div>
+
+
+
+        </form>
+
+
+
+    </div>
+
+
+    <script src="/script/prestamo.js"></script>
+    <script src="/script/abrirCerrarPrestamo.js"></script>
+
+</body>
+
+</html>

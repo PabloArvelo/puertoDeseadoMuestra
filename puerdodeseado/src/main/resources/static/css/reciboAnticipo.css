@@ -1,0 +1,332 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+}
+
+
+#divTabla {
+    display: flex;
+    flex-direction: column;
+    /* margin-top: 50px; */
+    width: 750px;
+}
+
+.tabla1,
+.tabla2 {
+    width: 100%;
+    margin: 0;
+}
+
+table td {
+    height: 10px;
+}
+
+table {
+    border-left: 1px solid black;
+    /* Línea vertical externa izquierda */
+    border-right: 1px solid black;
+    /* Línea vertical externa derecha */
+    border-collapse: collapse;
+    /* Opcional, para fusionar bordes */
+}
+
+td {
+    border-left: 1px solid black;
+    /* Línea vertical izquierda */
+    border-right: 1px solid black;
+    /* Línea vertical derecha */
+}
+
+
+.encabezados {
+    border: black ;
+    /* border: #1d2124 solid; */
+    border: 1px solid #1d2124;
+    background-color: #f0ecec;
+    border-collapse: collapse;
+    color: rgb(0, 0, 0);
+}
+
+.concepto {
+    /* background-color: #bcd3e6; */
+    width: 43%;
+}
+
+.horas{    
+    width: 7%;
+    text-align: center;
+}
+.unitario{
+    width: 8%;
+    text-align: center;
+}
+.resto {    
+    width: 14%;
+    text-align: center;
+}
+
+
+
+/*   ----------logos y datos ----------  */
+
+/* -------- logos -------- */
+#logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;    
+}
+
+#pdLogo, #ifiLogo{
+    width: 120px;   /* Ajusta el ancho de la imagen */
+    height: auto;   /* Mantiene la proporción de la imagen */
+    object-fit: contain;     
+}
+
+
+/* --------- datos -------- */
+
+#logoYDatos {
+    display: flex;
+    flex-direction: row;
+    width: 750px;
+    height: 120px;
+    /* border: #000000 solid 1px; */
+}
+
+#datosAsociado {
+    width: 750px;
+    height: 100px;
+    /* border: #722323 solid 5px; */
+    /* background-color: aqua; */
+
+}
+
+
+
+
+#logo,
+#datos {
+    width: 50%;
+    border: #000000 solid 1px;
+}
+
+#datos {
+    display: flex;
+    flex-direction: column;
+}
+
+.datosCoop {
+    width: 100%;
+    height: 20%;
+    border: #000000 solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: smaller;
+    font-weight: bold;
+}
+.datos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+#div3Datos,
+#div4Datos {
+    display: flex;
+    flex-direction: row;
+}
+
+#cuit,
+#iibb,
+#matricula,
+#regProv {
+    width: 50%;
+    border: #000000 solid 1px;
+}
+
+
+/*   ----------datos asociados----------  */
+.datosAsoc {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 25%;
+}
+
+.fila1,
+.fila2,
+.fila3,
+.fila4 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 2px;
+    border: #000000 solid 1px;
+
+}
+
+/*  -- fila 1 -- */
+
+#anticipoTitulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    padding-right: 2px;
+
+    width: 30%;
+}
+
+#numeroRecibo {
+    width: 20%;
+}
+
+#fechaPagoTitulo {
+    flex-direction: row;
+    justify-content: end;
+    padding-right: 2px;
+    width: 25%;
+}
+
+#fechaPago {
+    width: 25%;
+}
+
+/*  -- fila 2 -- */
+#iniActivTitulo {
+    flex-direction: row;
+    justify-content: end;
+    padding-right: 2px;
+    width: 21%;
+}
+
+#inicioActividades {
+    width: 11%;
+}
+
+#apeYNomTitulo {
+    width: 19%;
+}
+
+#apelligoYNombre {
+    width: 51%;
+}
+
+/*  -- fila 3 -- */
+#dniTitulo,
+#dni,
+#cuitTitulo,
+#cuil {
+    width: 25%;
+}
+
+#dniTitulo,
+#cuitTitulo {
+    flex-direction: row;
+    justify-content: end;
+    padding-right: 2px;
+
+}
+
+
+
+/*  -- fila 4 -- */
+#tareaTitulo {
+    width: 6%;
+}
+
+#tarea {
+    width: 16%;
+}
+
+#domicFiscTitulo {
+    width: 15%;
+}
+
+#domicilioFiscal {
+    width: 63%;
+}
+
+.titulo {
+    font-weight: bold;
+}
+
+/*   ----------aprobado tesorería ----------  */
+
+#aprobadoTesoreria {
+    display: flex;
+    flex-direction: column;
+    width: 748px;
+    height: 220px;
+    border: #000000 solid 1px;
+}
+
+#aprobTesArriba {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 15%;
+    ;
+}
+
+#aprobTesAbajo {
+    display: flex;
+    flex-direction: row;
+    height: 85%;
+    ;
+}
+
+.textoVertical {
+    writing-mode: vertical-rl;
+    /* Hace que el texto sea vertical */
+    transform: rotate(180deg);
+    /* Invierte la orientación para que se lea de abajo hacia arriba */
+    text-orientation: mixed;
+    /* Asegura que los caracteres estén en la dirección correcta */
+}
+
+#original {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*   ----------recibí conforme ----------  */
+
+#recibiConforme {
+    display: flex;
+    flex-direction: column;
+
+    width: 748px;
+    height: 200px;
+    border: #000000 solid 1px;
+}
+
+.recConf {
+    padding-left: 2px;
+    height: 9%;
+}
+
+#netoEnLetras {
+    /* font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: "Arial", sans-serif;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#fila7 {
+    display: flex;
+    flex-direction: row;
+    height: 46%;
+    justify-content: space-around;
+    align-items: end;
+}
+
+.spanFirmaAclara {
+    display: inline-block;
+    width: 260px;
+    text-align: center;
+    border-top: dashed 1px;
+}

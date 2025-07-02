@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>alta rol</title>
+
+    <link rel="icon" type="image/png" th:href="@{/img/iconos/favicon.png}">
+
+    <link rel="stylesheet" href="/css/seguridadTodasLasVistas.css">
+    <link rel="stylesheet" href="/css/barraLateral.css">
+    <link rel="stylesheet" href="/css/botonesSeguridad.css">
+    <link rel="stylesheet" href="/css/navBar.css">
+    
+    
+</head>
+
+<body>
+    <aside th:replace="seguridad/componentes/barraLateralCRUD :: aside"></aside>
+
+    <div id="contenedor">
+        <nav th:replace="componentes/navBar :: nav"></nav>
+        <h1>alta rol</h1>
+
+        <form th:action="@{/seguridad/rolGuardar}" method="post" th:object="${rolesDTO}">
+            
+
+            <div>
+                <label for="rol">nuevo rol</label>
+                <input type="text" id="rol" name="rol" required="required" th:field="*{rol}">
+                <span th:if="${#fields.hasErrors('rol')}" th:errors="*{rol}" class="error"></span>
+            </div>
+
+            <!-- <div>
+                <label for="permisos">permisos</label>
+                <select id="permisos" name="permisos" multiple required="required" th:field="*{listaPermisos}">
+
+                    <option th:each="permiso : ${listaPermisos}" th:value="${permiso.id}" th:text="${permiso.permiso}"></option>
+
+                </select>
+            </div> -->
+
+            <div>
+                <label>Permisos</label>
+                <div th:each="permiso : ${listaPermisos}">
+                    <input type="checkbox" th:id="'permiso_' + ${permiso.id}" th:name="listaPermisos" th:value="${permiso.id}">
+                    <label th:for="'permiso_' + ${permiso.id}" th:text="${permiso.permiso}"></label>
+                </div>
+            </div>
+            
+
+            <div>
+                <button type="submit">Guardar</button>
+            </div>
+        </form>
+
+    </div>    
+
+
+    <script src="/script/barraLateralSeguridadRolCRUD.js"></script>
+    <script src="/script/rolesAlta.js"></script>
+
+    
+</body>
+
+</html>
